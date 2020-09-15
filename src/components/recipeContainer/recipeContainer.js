@@ -4,8 +4,8 @@ import Row from "./Row";
 import Col from "./Col";
 import Card from "./Card";
 import SearchForm from "./SearchForm";
-import Recipe from "./Recipe";
-import API from "../utils/API";
+import Recipe from "../Recipe/Recipe";
+import API from "../../utils/API";
 
 class RecipeContainer extends Component {
   state = {
