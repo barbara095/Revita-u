@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-function NavTabs() {
+function Navbar() {
   
   const location = useLocation();
 
@@ -32,4 +32,4 @@ function NavTabs() {
   );
 }
 
-export default NavTabs;
+export default Navbar;

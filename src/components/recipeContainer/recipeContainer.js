@@ -3,7 +3,7 @@ import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
 import Card from "./Card";
-import SearchForm from "./SearchForm";
+import Search from "./SearchForm";
 import Recipe from "../Recipe/Recipe";
 import API from "../../utils/API";
 
@@ -68,7 +68,7 @@ class RecipeContainer extends Component {
           </Col>
           <Col size="md-4">
             <Card heading="Search">
-              <SearchForm
+              <Search
                 search={this.state.search}
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
