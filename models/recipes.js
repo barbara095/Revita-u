@@ -15,6 +15,44 @@ const recipeSchema = new Schema(
                 ref: "Food"
             }
         ],
+        nutrition: [
+            {
+                calories: {
+                    type: Number,
+                    trim: true,
+                } 
+            },
+            {
+                carbs: {
+                    type: Number,
+                    trim: true,
+                } 
+            },
+            {
+                protein: {
+                    type: Number,
+                    trim: true,
+                } 
+            },
+            {
+                sugar: {
+                    type: Number,
+                    trim: true,
+                } 
+            },
+            {
+                fat: {
+                    type: Number,
+                    trim: true,
+                } 
+            },
+            {
+                sodium: {
+                    type: Number,
+                    trim: true,
+                } 
+            }
+         ],
         date: {
             type: Date,
             default: Date.now

@@ -1,7 +1,7 @@
-import React from "react";
+import React from "./node_modules/react";
 import "./style.css";
 
-function Search(props) {
+function SearchForm(props) {
     return (
         <form>
             <div className="form-group">
@@ -22,4 +22,4 @@ function Search(props) {
     )
 };
 
-export default Search;
+export default SearchForm;

@@ -21,42 +21,6 @@ const foodSchema = new Schema(
         }
       },
         //  nutrition information
-      {
-        calories: {
-            type: Number,
-            trim: true,
-        } 
-      },
-      {
-        carbs: {
-            type: Number,
-            trim: true,
-        } 
-      },
-      {
-        protein: {
-            type: Number,
-            trim: true,
-        } 
-      },
-      {
-        sugar: {
-            type: Number,
-            trim: true,
-        } 
-      },
-      {
-        fat: {
-            type: Number,
-            trim: true,
-        } 
-      },
-      {
-        sodium: {
-            type: Number,
-            trim: true,
-        } 
-      }
     ],
     
     date: {
