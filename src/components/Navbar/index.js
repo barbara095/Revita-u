@@ -6,6 +6,8 @@ import { NavbarData } from "../NavData";
 import 'semantic-ui-react';
 import './style.css';
 import { IconContext } from 'react-icons';
+import { Col } from '../Grid';
+import Logo from "../../assets/images/logo.png";
 
 function Navbar() {
   
@@ -14,13 +16,14 @@ function Navbar() {
 
   return (
     
-    <IconContext.Provider value={{color: '#fff'}}>
+    <IconContext.Provider value={{color: '#fff'}} >
     <div className="navbar">
         <Link to="#" className='menu-bars'>
           <FaIcons.FaBars onClick={showSidebar}/>
         </Link>
+        <img className="logo" src={Logo} alt="logo"></img>
       </div>
-
+      <Col size="sm-3">
        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className='nav-menu-items' onClick={showSidebar}>
           <li className='navbar-toggle'>
@@ -37,13 +40,13 @@ function Navbar() {
                   <span>{item.title}</span>
                 </Link>
               </li>
-        
             );
           })}
         </ul>
       </nav>
+      </Col>
       </IconContext.Provider>
-      
+     
   );
 }
 

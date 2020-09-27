@@ -13,13 +13,13 @@ function App() {
     <Router>
       <div>
         <Navbar />
-      
+      <Wrapper>
           <Switch>
             <Route exact path="/" component={Substitution} />
             <Route exact path="/recipes" component={Recipe} />
             <Route exact path="/blog" component={Saved} />
           </Switch>
-       
+          </Wrapper>
         <Footer />
       </div>
     </Router>

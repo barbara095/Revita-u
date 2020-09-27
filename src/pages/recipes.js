@@ -30,7 +30,7 @@ function Recipes() {
 
     return (
 
-      <Container>
+      <Container fluid>
         <Row>
           <Col size="md-8">
             {/* <Card > */}

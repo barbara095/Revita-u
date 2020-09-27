@@ -2,12 +2,15 @@
   min-height: 100px;
   background: #3a3d35;
   color: #fff;
-  position: relative;
+  /* position: fixed; */
   padding: 20px;
+  bottom: 0;
+  display: inline-block;
+  width: 100%;
 }
 
 .footer span {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
