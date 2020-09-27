@@ -13,6 +13,16 @@
   }
 }
 
+.home, 
+.recipes, 
+.saved {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

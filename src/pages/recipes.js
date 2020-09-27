@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import { Col, Row, Container } from "../components/Grid";
 // import Card from "./components/Card";
-import API from "../../utils/API";
+import API from "../utils/API";
 
 function Recipes() {
 
