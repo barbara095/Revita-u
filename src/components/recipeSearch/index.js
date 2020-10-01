@@ -1,22 +1,21 @@
-import React from "./node_modules/react";
+import React from "react";
+import { SearchInput } from 'evergreen-ui';
 import "./style.css";
 
 function SearchForm(props) {
     return (
-        <form>
+        <form className="search">
             <div className="form-group">
-                <label>Search</label>
-                <input
+            <label>{props.label}</label>
+                <SearchInput
                     id="search"
-                    onChange={props.handleInputChange}
-                    value={props.search}
                     name="search"
                     type="text"
-                    placeholder="Search for a recipe!"
+                    className="search-bar"
+                    placeholder={props.placeholder}
+                    onChange={props.handleInputChange}
+                    value={props.search}
                 />
-                <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-                    Search
-                 </button>
             </div>
         </form>
     )

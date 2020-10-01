@@ -8,9 +8,9 @@ import "./style.css";
 
 function CarouselHome() {
     return (
-      <Container fluid>
-        {/* <Col sm-12></Col> */}
-      <Carousel >
+      <Container fluid className='carousel'>
+        
+      <Carousel style={{overflow: 'hidden'}}>
       <Carousel.Item style={{'height': '100%'}}>
         <img style={{'height': '100%'}}
           className="d-block w-100"

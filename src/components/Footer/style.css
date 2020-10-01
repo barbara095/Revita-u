@@ -1,19 +1,13 @@
 .footer {
-  min-height: 100px;
-  background: #3a3d35;
+  min-height: 140px;
+  background: #20201e;
   color: #fff;
-  /* position: fixed; */
+  position: relative;
+  clear: both;
   padding: 20px;
   bottom: 0;
   display: inline-block;
   width: 100%;
-}
-
-.footer span {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3px;
-  background: #8daa66;
+  text-align: center;
+  line-height: 1.8;
 }

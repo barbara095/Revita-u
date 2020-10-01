@@ -1,19 +1,27 @@
 import React from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 import "./style.css";
 
 function Footer() {
   return (
     <footer className="footer">
-    <div className="footer-header">
-      Copyright Revita-U</div>
-    <div className="contact-panel col-md-5">
-      <div className="form-group">
-        <div className="footer-text">
-          <a href="mailto:info@revita-u.com">info@revita-u.com</a>
-          <i className="fa fa-envelope-o" aria-hidden="true"></i>
-        </div>
+
+    <div className="footer-header" ><FaIcons.FaCopyright />
+        Copyright Revita-U  
       </div>
+    <div className="mail">
+      <a href="mailto:info@revita-u.com"> <AiIcons.AiOutlineMail/>
+      @revita-u.com</a>
+        </div>
+    <div className="instagram"> <AiIcons.AiOutlineInstagram /> 
+      @revita-u
     </div>
+    <div className="newsletter">
+      Subscribe to our newsletter
+      
+    </div>
+
   </footer>
   );
 }
