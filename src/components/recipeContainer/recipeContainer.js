@@ -37,7 +37,7 @@ function RecipeContainer() {
             <SearchForm
                 value={search}
                 onChange={handleInputChange}
-                placeholder="Search for a recipe!"
+                placeholder="Search recipes by ingredient!"
               />
           </Col>
           <Col size="sm-2">
@@ -48,7 +48,6 @@ function RecipeContainer() {
           </FormBtn>
           </Col>
         </Row>
-        
           <Col size="md-4">
             {/* <Card heading="Search">
               <Search

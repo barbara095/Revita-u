@@ -17,7 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Substitution} />
             <Route exact path="/recipes" component={Recipe} />
-            <Route exact path="/blog" component={Saved} />
+            <Route exact path="/saved" component={Saved} />
           </Switch>
           </Wrapper>
         <Footer />

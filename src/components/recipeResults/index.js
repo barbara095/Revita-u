@@ -1,8 +1,11 @@
 import React from "react";
+import Card from "../Card";
 import "./style.css";
 
-function SearchResults(props) {
+function RecipeResults(props) {
   return (
+    <>
+    <Card />
     <ul className="list-group search-results">
       {props.results.map(result => (
         <li key={result} className="list-group-item">
@@ -11,7 +14,8 @@ function SearchResults(props) {
       </li>
       ))}
     </ul>
+    </>
   );
 }
 
-export default SearchResults;
+export default RecipeResults;
