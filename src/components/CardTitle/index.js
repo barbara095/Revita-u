@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
-import CardTitleText from "../CardTitleText";
+import { Item } from 'semantic-ui-react';
 
 function CardTitle({ title }) {
   return (
-    <div className="blue text-center">
-      <CardTitleText title={title} />
+    <div className="card-title">
+      <Item.Header title={title} />
     </div>
   );
 }

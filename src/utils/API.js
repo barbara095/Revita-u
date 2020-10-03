@@ -12,45 +12,56 @@ const ingredientAPI = "3112184fd50f665cccb860f7e34f8ae55ebc2ece";
 export default {
 
   searchRecipe: function(query) {
-    return axios.get(recipeURL + query + recipeAPI)
-    .then(res => {
-      const recipes = res.data;
-      console.log(recipes);
-      
-      return recipes.map(recipe => {
-        return {
-          title: recipe.label,
-          image: recipe.image,
-          url: recipe.url,
-          source: recipe.source,
-          labels: recipe.yield.healthLabels,
-          calories: recipe.calories,
-          carbs: recipe.totalNutrients.CHOCDF.quantity,
-          fat: recipe.totalNutrients.FAT.quantity,
-          protein: recipe.totalNutrients.PROCNT.quantity,
-          sugar: recipe.totalNutrients.SUGAR.quantity,
-          sodium: recipe.totalNutrients.NA.quantity,
-        };
-      });
-    });
+    return new Promise ((resolve, reject) => {
+      axios
+      .get(recipeURL + query + recipeAPI)
+      .then(res => {
+        const recipes = res.data;
+        console.log(recipes);
+        
+        const results = recipes.map(recipe => {
+          return {
+            title: recipe.label,
+            image: recipe.image,
+            url: recipe.url,
+            source: recipe.source,
+            labels: recipe.yield.healthLabels,
+            calories: recipe.calories,
+            carbs: recipe.totalNutrients.CHOCDF.quantity,
+            fat: recipe.totalNutrients.FAT.quantity,
+            protein: recipe.totalNutrients.PROCNT.quantity,
+            sugar: recipe.totalNutrients.SUGAR.quantity,
+            sodium: recipe.totalNutrients.NA.quantity,
+          };
+        });
+        resolve(results);
+      })
+      .catch(err => reject(err));
+    }) 
+    
   },
 
   searchIngredient: function(query) {
-    return axios.get(ingredientURL + query, {
-      'headers': {
-        'Authorization': ingredientAPI
-      }
-    })
-    .then(res => {
-      const recipes = res.data;
-      console.log(recipes);
+    return new Promise ((resolve, reject ) => {
+      axios
+        .get(ingredientURL + query, {
+        'headers': {
+          'Authorization': ingredientAPI
+        }
+      })
+      .then(res => {
+        const ingredients = res.data;
+        console.log(ingredients);
 
-      return recipes.map(recipe => {
-        return {
-          substitution: recipe.alternatives
-        };
-      });
-    });
+        const results = ingredients.map(ingredient => {
+          return {
+            substitution: ingredient.alternatives
+          };
+        })
+        resolve(results);
+      })
+      .catch(err => reject(err));
+    })
   }
 };
 

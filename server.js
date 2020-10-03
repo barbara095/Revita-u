@@ -2,7 +2,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-
+const routes = require("./routes");
 // Requiring express session to handle unique sessions
 // const session = require("express-session");
 
@@ -18,6 +18,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(routes);
 // We need to use sessions to keep track of our user's login status
 // app.use(
 //   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })

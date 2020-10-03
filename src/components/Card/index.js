@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Item } from 'semantic-ui-react';
 import CardImg from './CardImage';
-import CardTitle from './CardTitleText';
+import CardTitle from './CardTitle';
 
 function Card() {
 

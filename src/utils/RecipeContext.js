@@ -1,8 +1,9 @@
-// import React from "react";
+import React from "react";
 
-// const RecipeContext = React.createContext({
-//   title: "",
-//   url: ""
-// });
+const RecipeContext = React.createContext({
+  title: "",
+  url: "",
+  image: ""
+});
 
-// export default RecipeContext;
+export default RecipeContext;
