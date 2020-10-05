@@ -1,6 +1,9 @@
 // Requiring Express and mongoose
 const express = require("express");
 const logger = require("morgan");
+const path = require("path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 // Requiring express session to handle unique sessions
@@ -28,7 +31,13 @@ app.use(routes);
 
 
 // Accessing public directory
-app.use(express.static("public"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/public"));
+}
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+});
 
 // Requiring our routes
 app.use(require("./routes/api-routes.js"));
