@@ -56,8 +56,8 @@ function RecipeContainer() {
       <Row>
         <Col size="sm-8">
           <SearchForm
-            value={searchRecipes}
-            onChange={handleInputChange}
+            results={searchRecipes}
+            handleInputChange={handleInputChange}
             placeholder="Search recipes by ingredient!"
           />
           <FormBtn
