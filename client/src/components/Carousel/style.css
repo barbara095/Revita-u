@@ -1,11 +1,16 @@
 .carousel {
   position: relative;
   width: 100%;
-  z-index: 0;
 }
 
 .caption {
   font-size: 50px;
   top: 50%;
   bottom: 50%;
+ 
+}
+
+.carousel-container {
+  filter: brightness(85%);
+  width: 100%;
 }

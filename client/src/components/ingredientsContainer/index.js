@@ -5,6 +5,7 @@ import SearchForm from "../searchForm";
 import RecipeCard from "../Card";
 import FormBtn from "../Button";
 import API from "../../utils/API";
+import './style.css';
 
 function IngredientsContainer() {
 
@@ -30,6 +31,7 @@ function IngredientsContainer() {
   const handleFormSubmit = e => {
     e.preventDefault();
 
+    console.log(searchIngredients)
     API.searchIngredient(searchIngredients)
     .then(res => {
       if (res.data.length === 0) {
@@ -46,14 +48,14 @@ function IngredientsContainer() {
   }
 
   return (
-    <>
+    <div className="ingredients-container">
     <Container fluid style={{ minHeight: "100vh" }} >
-      <Wrapper className="wrapper-recipe">
+      <Wrapper className="wrapper-ingredients">
       <Row>
         <Col size="sm-8">
           <SearchForm
-            value={searchIngredients}
-            onChange={handleInputChange}
+            results={searchIngredients}
+            handleInputChange={handleInputChange}
             placeholder="What food would you like to substitute?"
           />
           <FormBtn
@@ -81,7 +83,7 @@ function IngredientsContainer() {
       </Col>
       </Wrapper>
     </Container>
-    </>
+    </div>
   );
 
 };

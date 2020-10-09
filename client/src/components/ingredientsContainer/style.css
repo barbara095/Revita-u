@@ -1,0 +1,9 @@
+.ingredients-container {
+  height: 90vh;
+  width: 100%;
+  background-color: blanchedalmond;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}

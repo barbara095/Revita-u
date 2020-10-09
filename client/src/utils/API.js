@@ -9,65 +9,88 @@ const ingredientURL = "https://bon-api.com/api/v1/ingredient-alternatives/";
 const ingredientAPI = "3112184fd50f665cccb860f7e34f8ae55ebc2ece";
 
 export default {
-  searchRecipe: function(query) {
-    return new Promise ((resolve, reject) => {
-      axios 
-      .get(recipeURL, {
-        'headers': { 
-          "content-type":"application/octet-stream",
-          "x-rapidapi-host":"edamam-recipe-search.p.rapidapi.com",
-          "x-rapidapi-key": recipeAPI,
-          "useQueryString":true,
-        },
-          "params":{ "q": query}
-      
-    })
-    .then(res => {
-      const recipes = res.data;
-      console.log(recipes);
-      const results = recipes.map(recipe => {
-        return {
-          title: recipe.label,
-          image: recipe.image,
-          url: recipe.url,
-          source: recipe.source,
-          labels: recipe.yield.healthLabels,
-          calories: recipe.calories,
-          carbs: recipe.totalNutrients.CHOCDF.quantity,
-          fat: recipe.totalNutrients.FAT.quantity,
-          protein: recipe.totalNutrients.PROCNT.quantity,
-          sugar: recipe.totalNutrients.SUGAR.quantity,
-          sodium: recipe.totalNutrients.NA.quantity,
-        };
-      });
-      resolve(results);
-    })
-    .catch(err => reject(err))
-    }
-  )},
-
-  searchIngredient: function(query) {
-    return new Promise ((resolve, reject ) => {
+  searchRecipe: function (query) {
+    return new Promise((resolve, reject) => {
       axios
-        .get(ingredientURL + query, {
-        'headers': {
-          'Authorization': ingredientAPI
-        }
-      })
-      .then(res => {
-        const ingredients = res.data;
-        console.log(ingredients);
-
-        const results = ingredients.map(ingredient => {
-          return {
-            substitution: ingredient.alternatives
-          };
+        .get(recipeURL, {
+          'headers': {
+            "content-type": "application/octet-stream",
+            "x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
+            "x-rapidapi-key": recipeAPI,
+            "useQueryString": true,
+          },
+          "params": { "q": query }
         })
-        resolve(results);
-      })
-      .catch(err => reject(err));
+        .then(res => {
+          const recipes = res.data.hits;
+          const results = recipes.map(({ recipe }) => {
+            return {
+              title: recipe.label,
+              image: recipe.image,
+              url: recipe.url,
+              source: recipe.source,
+              labels: recipe.healthLabels,
+              calories: recipe.calories,
+              carbs: recipe.totalNutrients.CHOCDF.quantity,
+              fat: recipe.totalNutrients.FAT.quantity,
+              protein: recipe.totalNutrients.PROCNT.quantity,
+              sugar: recipe.totalNutrients.SUGAR.quantity,
+              sodium: recipe.totalNutrients.NA.quantity,
+            }
+          });
+          resolve(results);
+        })
+        .catch(err => reject(err))
+    }
+    )
+  },
+
+  getRecipes: function () {
+    return axios.get("/api/recipes");
+  },
+
+  getRecipe: function (id) {
+    return axios.get("/api/recipes/" + id);
+  },
+
+  deleteRecipe: function (id) {
+    return axios.get("/api/recipes/" + id);
+  },
+
+  saveRecipe: function (savedRecipes) {
+    return axios.get("/api/recipes", savedRecipes);
+  },
+
+  searchIngredient: function (query) {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(ingredientURL + query + "/", {
+          'headers': {
+            'Authorization': `Token ${ingredientAPI}`
+          }
+        })
+        .then(res => {
+          const ingredients = res.data;
+          console.log(ingredients);
+
+          const results = ingredients.map(ingredient => {
+            return {
+              substitution: ingredient.alternatives
+            };
+          })
+          resolve(results);
+        })
+        .catch(err => reject(err));
     })
-  }
+  },
+
+  getSubstitutes: function () {
+    return axios.get("/api/substitutes");
+  },
+
+  getSubstitute: function (id) {
+    return axios.get("/api/substitutes/" + id);
+  },
 };
 
 

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Recipe = require("../models/recipes.js");
+const Recipe = require("../../models/recipes.js");
 
 router.post("/api/recipes", ({ body }, res) => {
   Recipe.create(body)

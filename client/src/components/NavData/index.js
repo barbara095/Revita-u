@@ -1,7 +1,7 @@
 import React from "react";
 import * as AiIcons from "react-icons/ai";
 import * as GiIcons from "react-icons/gi";
-
+import * as MdIcons from "react-icons/md";
 
 export const NavbarData = [
     {
@@ -20,6 +20,12 @@ export const NavbarData = [
         title: 'Saved',
         path: '/saved',
         icon: <GiIcons.GiSpellBook />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Sign Up',
+        path: '/signup',
+        icon: <MdIcons.MdAccountCircle />,
         cName: 'nav-text'
     },
 
