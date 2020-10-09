@@ -16,8 +16,8 @@ function RecipeContainer() {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
-  
-  
+
+
   const handleInputChange = e => {
     setSearch(e.target.value);
   }
@@ -31,19 +31,15 @@ function RecipeContainer() {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    
+
     console.log(searchRecipes);
     API.searchRecipe(searchRecipes)
-    .then(res => {
-      if (res.data.length === 0) {
+    .then(recipes => {
+		console.log(recipes);
+      if (recipes.length === 0) {
         throw new Error("No recipes found");
       }
-      if (res.data.status === "error") {
-        throw new Error(res.data.message);
-      }
-      console.log(res.data);
-      setRecipes(res.data);
-      setTitle(res.data.title);
+      setRecipes(recipes);
     })
     .catch(err => console.log(err));
   }
@@ -70,19 +66,9 @@ function RecipeContainer() {
       </div>
       <Col size="sm-6">
             <Card>
-              {recipes.map(recipe => { 
-                console.log(recipes);
-                return (
-                 
-                  <RecipeResults
-                    results={recipes}
-                    key={recipe.title}
-                    title={recipe.title}
-                    // url={recipe.url}
-                    // source={recipe.source}
-                  />
-                )}
-              )}
+				<RecipeResults
+					results={recipes}
+				/>
 
             </Card>
       </Col>

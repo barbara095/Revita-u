@@ -7,10 +7,10 @@ function RecipeResults(props) {
     <>
     <Card />
     <ul className="list-group search-results">
-      {props.results.map(result => (
-        <li key={result} className="list-group-item">
-        <h2>{props.result.title}</h2>
-        <a href={props.result.url}>{props.url}</a>
+      {props.results.map(recipe => (
+        <li key={recipe.title} className="list-group-item">
+        <h2>{recipe.title}</h2>
+        <a href={recipe.url}>{props.url}</a>
       </li>
       ))}
     </ul>
