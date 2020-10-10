@@ -6,6 +6,7 @@ import Card from "../Card";
 import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
 import FormBtn from "../Button";
+import Jumbotron from "../jumbotron";
 import API from "../../utils/API";
 import './style.css';
 import { UnderlineIcon } from "evergreen-ui";
@@ -29,8 +30,8 @@ function RecipeContainer() {
     // console.log(searchRecipes);
 
     API.searchRecipe(searchRecipes)
-    .then(recipes => {
-      console.log(recipes);
+      .then(recipes => {
+        console.log(recipes);
         if (recipes.length === 0) {
           throw new Error("No recipes found");
         }
@@ -49,14 +50,13 @@ function RecipeContainer() {
   const handleSaved = e => {
     e.preventDefault();
 
-    let savedRecipes = this.state.recipeList.filter(
+    let savedRecipes = recipes.filter(
       (recipe) => recipe.id === e.target.id
     );
     savedRecipes = savedRecipes[0];
 
     API.saveRecipe(savedRecipes)
-      .then(this.setState({
-        recipeList: this.state.recipeList.map(recipe => {
+      .then(setRecipes(recipes.map(recipe => {
           if (recipe.id === e.target.id) {
             return {
               ...recipe, buttonText: "Saved"
@@ -65,30 +65,29 @@ function RecipeContainer() {
             return recipe;
           }
         })
-      }))
+      ))
       .catch((error) => console.log("Error", error));
   };
 
 
   return (
     <div className="recipe-container">
+      <Jumbotron />
       <Container fluid style={{ minHeight: "100vh" }} className="container-recipe">
         <Wrapper>
           <div className="recipe-search-form">
-            <Row>
-              <Col size="sm-8 centered">
-                <SearchForm
-                  value={recipes}
-                  handleInputChange={handleInputChange}
-                  placeholder="Search recipes by ingredient!"
-                />
-                <FormBtn
-                  onClick={handleFormSubmit}
-                  type="success"
-                >
-                </FormBtn>
-              </Col>
-            </Row>
+
+            <SearchForm
+              value={recipes}
+              handleInputChange={handleInputChange}
+              placeholder="Search recipes by ingredient!"
+            />
+            <FormBtn
+              onClick={handleFormSubmit}
+              type="success"
+              basic color="teal"
+            >
+            </FormBtn>
 
             <Row>
               <Col size="sm-6">
@@ -97,6 +96,7 @@ function RecipeContainer() {
                     results={recipes}
                     title={title}
                     url={url}
+                    handleSaved={handleSaved}
                   />
                 </Card>
               </Col>

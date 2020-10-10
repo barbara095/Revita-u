@@ -2,6 +2,7 @@
 const express = require("express");
 const logger = require("morgan");
 const path = require("path");
+const cors = require('cors')
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -16,14 +17,16 @@ const app = express();
 
 app.use(logger("dev"));
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(routes);
 
 // Allows CORS policy to run https request
+
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://bon-api.com/api/v1/ingredient-alternatives/"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "https://bon-api.com/api/v1/ingredient-alternatives/"); 
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });

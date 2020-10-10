@@ -4,14 +4,12 @@ import { Button, Icon } from 'semantic-ui-react';
 function FormBtn(props) {
 
   return (
-    <Button animated
+    <Button
         onClick={props}
         className={`button ${props["data-value"]}`} {...props}
+        basic-color='teal'
     > 
-      <Button.Content visible>Search</Button.Content>
-      <Button.Content hidden>
-        <Icon name='search' />
-      </Button.Content>
+      
     </Button>
   )
 

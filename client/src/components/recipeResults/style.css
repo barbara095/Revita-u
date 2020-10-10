@@ -1,3 +1,5 @@
 .recipe-results {
-  min-height: 800px;
+  position: relative;
+  justify-content: center;
+  color: rgb(66, 88, 92);
 }

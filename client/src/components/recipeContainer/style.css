@@ -3,6 +3,7 @@
   margin: 0 auto 0 auto;
   width: 100%;
   background-color: cadetblue;
+  height: 800px;
 }
 
 .recipe-search-form {
@@ -12,5 +13,4 @@
   margin: 0 auto 0 auto;
   background-color: rgb(114, 180, 189);
   color: #fff;
-  height: 300px;
 }
