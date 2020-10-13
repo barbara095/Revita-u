@@ -5,20 +5,29 @@ import SearchForm from "../searchForm";
 import Card from "../Card";
 import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
+import { useStoreContext } from "../../utils/globalstate";
 import FormBtn from "../Button";
-import Jumbotron from "../jumbotron";
+import Jumbotron from "../Jumbotron";
 import API from "../../utils/API";
 import './style.css';
-import { UnderlineIcon } from "evergreen-ui";
+import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../../utils/actions";
 
-function RecipeContainer() {
+function RecipeContainer(props) {
 
   const [recipes, setRecipes] = useState([]);
   const [searchRecipes, setSearch] = useState("");
   const [title, setTitle] = useState([""]);
   const [url, setUrl] = useState([""]);
   const [ingredients, setIngredients] = useState([""]);
-  const [source, setSource] = useState([""]);
+
+  // const [state, dispatch] = useStoreContext();
+
+  // useEffect(() => {
+  //   API.getRecipe(props.match.params.id)
+  //     .then(recipes => dispatch({ type: SET_CURRENT_POST, post: recipes }))
+  //     .catch(err => console.log(err));
+  // }, []);
+
 
   const handleInputChange = e => {
     const { value } = e.target;
@@ -38,17 +47,20 @@ function RecipeContainer() {
         setRecipes(recipes);
         setTitle(recipes.title);
         setUrl(recipes.url);
-        // setRecipes(res.data.hits[0].recipe.label);
-        // setTitle(res.data.hits[0].recipe.label);
-        // setUrl(res.data.hits[0].recipe.uri);
-        // setIngredients(res.data.hits[0].recipe.ingredients)
-        // setSource(res.data.hits[0].recipe.source)
+        setIngredients(recipes.ingredients)
+        
       })
       .catch(err => console.log(err));
   };
 
   const handleSaved = e => {
     e.preventDefault();
+    console.log(recipes);
+    console.log(e.target.id);
+    // dispatch({
+    //   type: ADD_FAVORITE,
+    //   post: state.currentPost
+    // })
 
     let savedRecipes = recipes.filter(
       (recipe) => recipe.id === e.target.id
@@ -91,14 +103,15 @@ function RecipeContainer() {
 
             <Row>
               <Col size="sm-6">
-                <Card>
+                
                   <RecipeResults
                     results={recipes}
                     title={title}
                     url={url}
+                    ingredients={ingredients}
                     handleSaved={handleSaved}
                   />
-                </Card>
+                
               </Col>
             </Row>
           </div>

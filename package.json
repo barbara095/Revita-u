@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "@material-ui/core": "^5.0.0-alpha.11",
+    "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -15,12 +16,14 @@
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "react-multi-select-component": "^3.0.4",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "spectre.css": "^0.5.9"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^2.0.4"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -31,14 +34,6 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/barbara095/revita-u.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/barbara095/revita-u/issues"
-  },
-  "homepage": "https://github.com/barbara095/revita-u#readme"
+  "license": "ISC"
 }

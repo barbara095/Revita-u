@@ -1,11 +1,11 @@
 import React from "react";
-import FormBtn from "./components/Button/index";
+import Dropdown from "../Dropdown";
+import SearchInput from '../searchForm';
 import { Form } from 'semantic-ui-react';
 import "./style.css";
 
 function IngredientsSearch(props) {
   return (
-    <form className="search-ingredients">
       <div className="form-group">
         <SearchInput
           id="search"
@@ -16,8 +16,8 @@ function IngredientsSearch(props) {
           onChange={props.handleInputChange}
           value={props.search}
         />
+        {/* <Dropdown /> */}
       </div>
-    </form>
   )
 
 };

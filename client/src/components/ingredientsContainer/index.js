@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Col, Row, Container } from "../Grid";
 import Card from "../Card";
 import Wrapper from "../Wrapper";
+import { substitute, diet, allergies } from "../Dropdown";
+import DropDown from "../Dropdown";
+import IngredientsSearch from "../ingredientsSearch";
 import IngredientsResults from "../ingredientsResults";
 import SearchForm from "../searchForm";
 import FormBtn from "../Button";
@@ -49,25 +52,25 @@ function IngredientsContainer() {
     <div className="ingredients-container">
       <Container fluid style={{ minHeight: "100vh" }} >
         <Wrapper className="wrapper-ingredients">
-          <Row>
-            <Col size="sm-8">
-              <SearchForm
-                value={ingredients}
-                handleInputChange={handleInputChange}
-                placeholder="What food would you like to substitute?"
-              />
-              <FormBtn
-                onClick={handleFormSubmit}
-                type="success"
-              >
-              </FormBtn>
-            </Col>
-          </Row>
+          
+          <div className="ingredients-search">
 
+            <IngredientsSearch 
+              value={ingredients}
+              handleInputChange={handleInputChange}
+              placeholder="What food would you like to substitute?"
+            />
+            <FormBtn
+              onClick={handleFormSubmit}
+              type="success"
+            >
+            </FormBtn>
+            <DropDown />
+            
           <Row>
             <Col size="sm-6">
               <Card>
-
+                
                 <IngredientsResults
                   results={ingredients}
                   
@@ -75,6 +78,7 @@ function IngredientsContainer() {
               </Card>
             </Col>
           </Row>
+          </div>
         </Wrapper>
       </Container>
     </div>

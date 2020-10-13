@@ -5,8 +5,8 @@ import "./style.css";
 
 function Jumbotron() {
   return (
-    <div className="jumbotron text-center">
-      <h1>Search for recipes by ingredient...</h1>
+    <div className="jumbotron">
+      <h1 className="jumbotron-header">Search for recipes by ingredient...</h1>
       {/* <SearchForm />
       <FormBtn /> */}
     </div>

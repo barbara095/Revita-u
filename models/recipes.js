@@ -4,10 +4,23 @@ const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema(
     {
-        name: {
+        title: {
             type: String,
             trim: true,
             unique: true,
+        },
+        source: {
+            type: String,
+            trim: true,
+            unique: true,
+        },
+        link: {
+            type: String,
+            trim: true,
+        },
+        image: {
+            type: String,
+            trim: true,
         },
         food: [
             {

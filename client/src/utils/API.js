@@ -5,7 +5,7 @@ const recipeURL = "https://edamam-recipe-search.p.rapidapi.com/search";
 const recipeAPI = "435f0cdaeamshd0fe4e59b8a1c27p16ae90jsn8bb53a2736cc";
 
 // BonAPI allows us to search for food alternatives 
-const ingredientURL = "http://bon-api.com/api/v1/ingredient-alternatives/";
+const ingredientURL = "https://bon-api.com/api/v1/ingredient/alternatives/chicken";
 const ingredientAPI = "3112184fd50f665cccb860f7e34f8ae55ebc2ece";
 
 export default {
@@ -29,6 +29,7 @@ export default {
               image: recipe.image,
               url: recipe.url,
               source: recipe.source,
+              ingredients: recipe.ingredientLines,
               labels: recipe.healthLabels,
               calories: recipe.calories,
               carbs: recipe.totalNutrients.CHOCDF.quantity,
@@ -64,32 +65,35 @@ export default {
   searchIngredient: function (query) {
     return new Promise((resolve, reject) => {
       axios
-        .get(ingredientURL + query + "/", {
+        .get(ingredientURL + query, {
           'headers': {
-            'Authorization': 'Token' + ingredientAPI
-          }
+            'Authorization': 'Token' + ingredientAPI,
+            "Access-Control-Allow-Origin": ingredientURL,
+            // "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+            // "Access-Control-Allow-Headers": "X - PINGOTHER, Content- Type"
+        }
         })
-        .then(res => {
-          const ingredients = res.data;
-          console.log(ingredients);
-          const results = ingredients.map(({ ingredient }) => {
-            return {
-              substitution: ingredient.ingredients.alternatives
-            };
-          })
-          resolve(results);
+      .then(res => {
+        const ingredients = res.data;
+        console.log(ingredients);
+        const results = ingredients.map(({ ingredient }) => {
+          return {
+            substitution: ingredient.ingredients.alternatives
+          };
         })
-        .catch(err => reject(err));
-    })
-  },
+        resolve(results);
+      })
+      .catch(err => reject(err));
+  })
+},
 
-  getSubstitutes: function () {
-    return axios.get("/api/substitutes");
-  },
+getSubstitutes: function () {
+  return axios.get("/api/substitutes");
+},
 
-  getSubstitute: function (id) {
-    return axios.get("/api/substitutes/" + id);
-  },
+getSubstitute: function (id) {
+  return axios.get("/api/substitutes/" + id);
+},
 };
 
 

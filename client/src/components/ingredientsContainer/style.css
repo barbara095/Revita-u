@@ -1,9 +1,6 @@
-.ingredients-container {
-  height: 90vh;
-  width: 100%;
-  background-color: blanchedalmond;
+.ingredients-search {
+  justify-content: center; 
+  text-align: center;
+  margin: 0 auto 0 auto;
   padding-top: 20px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
 }

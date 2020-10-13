@@ -17,7 +17,7 @@ const app = express();
 
 app.use(logger("dev"));
 
-app.use(cors());
+// app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -25,40 +25,40 @@ app.use(routes);
 
 // Allows CORS policy to run https request
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://bon-api.com/api/v1/ingredient-alternatives/"); 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "https://bon-api.com/api/v1/ingredient-alternatives/");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
-// Using sessions to keep track of our user's login status
+// // Using sessions to keep track of our user's login status
 app.use(
   session({ secret: "jeffrey-poukamiso", resave: true, saveUninitialized: true })
 );
-app.use((req, res, next) => {
-  console.log('req.session', req.session);
-  return next();
-})
+// app.use((req, res, next) => {
+//   console.log('req.session', req.session);
+//   return next();
+// })
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Accessing public directory
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 // Requiring our routes
-app.use(require("./routes/api/api-routes.js"));
-app.use(require("./routes/html-routes.js"));
+// app.use(require("./routes/api/api-routes.js"));
+// app.use(require("./routes/html-routes.js"));
 
-mongoose.connect(process.env.MONGODB_URI || 
-    "mongodb://localhost/revita-u", { 
-      useNewUrlParser: true, 
-      useUnifiedTopology: true, 
+mongoose.connect(process.env.MONGODB_URI ||
+    "mongodb://localhost/revita-u", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
       useFindAndModify: false },
     );
 
