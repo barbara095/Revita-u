@@ -1,4 +1,4 @@
-.carousel {
+.carousel-container {
   position: relative;
   width: 100%;
 }
@@ -11,6 +11,6 @@
 }
 
 .carousel-container {
-  filter: brightness(85%);
+  filter: brightness(90%);
   width: 100%;
 }

@@ -9,12 +9,16 @@ import './style.css';
 function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log("first name is " + firstname);
+    console.log("last name is " + lastname);
     console.log("username is " + username);
     console.log("password is " + password);
-
+    
     axios.post('/signup', {
       username: username,
       password: password
@@ -39,15 +43,29 @@ function Signup() {
   return (
     <div className="sign-in-form">
       <Container className="container" fluid>
-        <Row>
-          <Col size="md-4" mx auto>
-            <Segment inverted>
-              <div className="sign-in-header">
+        <div className="signup-wrap">
+          <Row>
+            <Col size="md-4">
+              <Segment inverted className="sign-in-segment">
                 <h3 className="header">Welcome to Revita-U!</h3>
-              </div>
-              <form onSubmit={handleSubmit}>
-                <Form inverted>
+                <Form
+                  inverted
+                  onSubmit={handleSubmit}>
                   <div className="form-group">
+                    <Form.Input
+                      fluid label="First name"
+                      type="text"
+                      placeholder="First Name"
+                      name="firstname"
+                      onChange={e => setFirstname(e.target.value)}
+                    />
+                    <Form.Input
+                      fluid label="Last name"
+                      type="text"
+                      placeholder="Last name"
+                      name="lastname"
+                      onChange={e => setLastname(e.target.value)}
+                    />
                     <Form.Input
                       fluid label="Username"
                       type="text"
@@ -57,7 +75,7 @@ function Signup() {
                     />
                     <Form.Input
                       fluid label="Password"
-                      type="text"
+                      type="password"
                       placeholder="Password"
                       name="password"
                       onChange={e => setPassword(e.target.value)}
@@ -68,11 +86,14 @@ function Signup() {
                       Submit
                   </button>
                   </Col>
+
                 </Form>
-              </form>
-            </Segment>
-          </Col>
-        </Row>
+              </Segment>
+
+            </Col>
+
+          </Row>
+        </div>
       </Container>
     </div>
 

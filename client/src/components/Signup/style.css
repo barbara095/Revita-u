@@ -1,30 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Sansita+Swashed&family=Spartan:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Sansita+Swashed&family=Spartan:wght@100&display=swap');
 
 .sign-in-form {
-  border-radius: 0em;
-  min-height: 500px;
+  border-radius: 0rem;
+  min-height: 550px;
   justify-content: center;
-  background-color: rgb(250, 207, 207);
-  margin: auto;
+  align-items: center;
+  background-image: url("../../assets/images/signup.jpg");
   justify-content: center;
-  padding-bottom: 10px;
   font-family: 'Raleway', sans-serif;
-  justify-items: space-between;
+  display: flex;
+  
+}
+
+.sign-in-segment {
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  border-radius: 0rem;
+  align-items: center;
+}
+
+.signup-wrap {
+  justify-content: center;
 }
 
 .btn.btn-success {
-  background-color: rgb(124, 120, 120);
-  border-radius: 0em;
-  border-color: rgb(124, 120, 120);
+  background-color: rgb(139, 199, 169);
+  color: rgb(22, 22, 22);
+  border-color: rgb(139, 199, 169);
+  border-radius: 0rem;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 200;
   width: 100%;
   margin: auto;
   justify-self: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .btn.btn-success:hover {
   background-color: rgb(224, 221, 221);
   border-color: rgb(124, 120, 120);
-  color: darkgrey;
+  color: rgb(37, 37, 37);
+  font-weight: 500;
 }
 
 .header {

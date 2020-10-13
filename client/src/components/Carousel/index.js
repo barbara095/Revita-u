@@ -9,7 +9,7 @@ import "./style.css";
 function CarouselHome() {
   return (
     <div className="carousel-container">
-      <Container fluid className='carousel'>
+      <Container fluid>
         <Carousel style={{ overflow: 'hidden' }}>
           <Carousel.Item style={{ 'height': '100%' }}>
             <img style={{ 'height': '100%' }}

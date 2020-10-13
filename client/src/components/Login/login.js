@@ -35,40 +35,45 @@ function Login() {
   };
 
   return (
-    <div>
-      <div className="mt-4">
-        <h2>Welcome to Revita-U!</h2>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <Container className="mt-3 px-5">
-          <Row className="form-group">
-            <Col size="8">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Username"
-                name="username"
-                onChange={e => setUsername(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <Row className="form-group">
-            <Col size="8">
-              <input
-                className="form-control"
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={e => setPassword(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <button className="btn btn-success" type="submit">
-            Submit
-          </button>
-        </Container>
-      </form>
-    </div>
+    <div className="sign-in-form">
+    <Container className="container" fluid>
+      <Row>
+        <Col size="md-4" mx auto >
+          <Segment inverted>
+            <div className="sign-in-header">
+              <h3 className="header">Welcome to Revita-U!</h3>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <Form inverted>
+                <div className="form-group">
+                  <Form.Input
+                    fluid label="Username"
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    onChange={e => setUsername(e.target.value)}
+                  />
+                  <Form.Input
+                    fluid label="Password"
+                    type="text"
+                    placeholder="Password"
+                    name="password"
+                    onChange={e => setPassword(e.target.value)}
+                  />
+                </div>
+                <Col size="md-12">
+                  <button className="btn btn-success" type="submit">
+                    Submit
+                </button>
+                </Col>
+              </Form>
+            </form>
+          </Segment>
+        </Col>
+        </Row>
+    </Container>
+  </div>
+
   );
 }
 
