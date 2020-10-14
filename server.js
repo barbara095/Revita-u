@@ -56,10 +56,13 @@ app.get("*", (req, res) => {
 // app.use(require("./routes/html-routes.js"));
 
 mongoose.connect(process.env.MONGODB_URI ||
-    "mongodb://localhost/revita-u", {
+    "mongodb://localhost/revitau", 
+    {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false },
+      useCreateIndex: true,
+      useFindAndModify: false
+    },
     );
 
 

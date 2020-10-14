@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { Button, Form, Segment } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom';
+import { Form, Segment } from 'semantic-ui-react'
 import 'spectre.css/dist/spectre.min.css';
 import 'spectre.css/dist/spectre-icons.css';
 import { Container, Row, Col } from "../Grid";
@@ -41,6 +42,7 @@ function Signup() {
   };
 
   return (
+
     <div className="sign-in-form">
       <Container className="container" fluid>
         <div className="signup-wrap">

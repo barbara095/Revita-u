@@ -71,19 +71,20 @@ export default {
             "Access-Control-Allow-Origin": ingredientURL,
             // "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
             // "Access-Control-Allow-Headers": "X - PINGOTHER, Content- Type"
-        }
+          }, 
+          "params": { "q": query }
+          })
+        .then(res => {
+          const ingredients = res.data;
+          console.log(ingredients);
+          const results = ingredients.map(({ ingredient }) => {
+            return {
+              substitution: ingredient.ingredients.alternatives
+            };
+          })
+          resolve(results);
         })
-      .then(res => {
-        const ingredients = res.data;
-        console.log(ingredients);
-        const results = ingredients.map(({ ingredient }) => {
-          return {
-            substitution: ingredient.ingredients.alternatives
-          };
-        })
-        resolve(results);
-      })
-      .catch(err => reject(err));
+        .catch(err => reject(err));
   })
 },
 

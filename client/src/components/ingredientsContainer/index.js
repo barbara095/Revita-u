@@ -8,6 +8,8 @@ import IngredientsSearch from "../ingredientsSearch";
 import IngredientsResults from "../ingredientsResults";
 import SearchForm from "../searchForm";
 import FormBtn from "../Button";
+import CarbSwaps from "../carbSwaps";
+import DairySwaps from "../dairySwap";
 import API from "../../utils/API";
 import './style.css';
 
@@ -18,7 +20,6 @@ function IngredientsContainer() {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
-
 
   const handleInputChange = e => {
     const { value } = e.target;
@@ -54,8 +55,10 @@ function IngredientsContainer() {
         <Wrapper className="wrapper-ingredients">
           
           <div className="ingredients-search">
-
-            <IngredientsSearch 
+            What did you swap out today? 
+            <CarbSwaps />
+            <DairySwaps />
+            {/* <IngredientsSearch 
               value={ingredients}
               handleInputChange={handleInputChange}
               placeholder="What food would you like to substitute?"
@@ -70,14 +73,14 @@ function IngredientsContainer() {
           <Row>
             <Col size="sm-6">
               <Card>
-                
+
                 <IngredientsResults
                   results={ingredients}
                   
                 />
               </Card>
             </Col>
-          </Row>
+          </Row> */}
           </div>
         </Wrapper>
       </Container>
