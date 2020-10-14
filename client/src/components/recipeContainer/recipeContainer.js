@@ -6,7 +6,7 @@ import Card from "../Card";
 import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
 import { useStoreContext } from "../../utils/globalstate";
-import JumbotronCont from "../Jumbotron/index";
+import JumbotronCont from "../jumbotron";
 import FormBtn from "../Button";
 import API from "../../utils/API";
 import './style.css';
