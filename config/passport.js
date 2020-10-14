@@ -13,7 +13,7 @@ passport.use(
       // When a user tries to sign in this code runs
       User.findOne({
         where: {
-          username: username
+          'username': username
         }
       }).then(User => {
         // If there's no user with the given email
