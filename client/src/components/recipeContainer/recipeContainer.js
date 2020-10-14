@@ -7,7 +7,7 @@ import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
 import { useStoreContext } from "../../utils/globalstate";
 import FormBtn from "../Button";
-import Jumbotron from "../Jumbotron";
+1
 import API from "../../utils/API";
 import './style.css';
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../../utils/actions";
@@ -20,15 +20,6 @@ function RecipeContainer(props) {
   const [url, setUrl] = useState([""]);
   const [ingredients, setIngredients] = useState([""]);
 
-  // const [state, dispatch] = useStoreContext();
-
-  // useEffect(() => {
-  //   API.getRecipe(props.match.params.id)
-  //     .then(recipes => dispatch({ type: SET_CURRENT_POST, post: recipes }))
-  //     .catch(err => console.log(err));
-  // }, []);
-
-
   const handleInputChange = e => {
     const { value } = e.target;
     setSearch(value);
@@ -36,8 +27,7 @@ function RecipeContainer(props) {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    // console.log(searchRecipes);
-
+  
     API.searchRecipe(searchRecipes)
       .then(recipes => {
         console.log(recipes);
