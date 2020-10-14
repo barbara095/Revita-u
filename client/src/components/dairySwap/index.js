@@ -56,6 +56,9 @@ export default function DairySwaps() {
   const leftChecked = intersection(checked, left);
   const rightChecked = intersection(checked, right);
 
+  console.log(leftChecked);
+  console.log(rightChecked);
+
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
