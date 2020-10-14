@@ -7,7 +7,7 @@ import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
 import { useStoreContext } from "../../utils/globalstate";
 import FormBtn from "../Button";
-import Jumbotron from "../Jumbotron";
+import Jumbotron from "../Jumbotron/index";
 import API from "../../utils/API";
 import './style.css';
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../../utils/actions";
