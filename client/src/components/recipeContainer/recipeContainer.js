@@ -7,7 +7,7 @@ import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
 import { useStoreContext } from "../../utils/globalstate";
 import FormBtn from "../Button";
-1
+// import Jumbotron from "../Jumbotron";
 import API from "../../utils/API";
 import './style.css';
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../../utils/actions";
@@ -20,6 +20,7 @@ function RecipeContainer(props) {
   const [url, setUrl] = useState([""]);
   const [ingredients, setIngredients] = useState([""]);
 
+
   const handleInputChange = e => {
     const { value } = e.target;
     setSearch(value);
@@ -27,7 +28,8 @@ function RecipeContainer(props) {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-  
+    
+
     API.searchRecipe(searchRecipes)
       .then(recipes => {
         console.log(recipes);
@@ -74,7 +76,7 @@ function RecipeContainer(props) {
 
   return (
     <div className="recipe-container">
-      <Jumbotron />
+      {/* <Jumbotron /> */}
       <Container fluid style={{ minHeight: "100vh" }} className="container-recipe">
         <Wrapper>
           <div className="recipe-search-form">
