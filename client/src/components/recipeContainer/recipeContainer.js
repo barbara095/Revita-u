@@ -6,6 +6,7 @@ import Card from "../Card";
 import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
 import { useStoreContext } from "../../utils/globalstate";
+import JumbotronCont from "../Jumbotron/index";
 import FormBtn from "../Button";
 import API from "../../utils/API";
 import './style.css';
@@ -75,10 +76,11 @@ function RecipeContainer(props) {
 
   return (
     <div className="recipe-container">
+      <JumbotronCont />
       <Container fluid style={{ minHeight: "100vh" }} className="container-recipe">
         <Wrapper>
           <div className="recipe-search-form">
-
+        
             <SearchForm
               value={recipes}
               handleInputChange={handleInputChange}
