@@ -1,4 +1,6 @@
 const User = require("../../models/user");
+const router = require('express').Router();
+const passport = require('../../config/passport');
 
 module.exports = (app) => {
 // For sign up
