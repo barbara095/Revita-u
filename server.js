@@ -52,10 +52,6 @@ if (process.env.NODE_ENV === "production") {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-// Requiring our routes
-// app.use(require("./routes/api/api-routes.js"));
-// app.use(require("./routes/html-routes.js"));
-
 mongoose.connect(process.env.MONGODB_URI ||
     "mongodb://localhost/revitau", 
     {
