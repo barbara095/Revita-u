@@ -18,6 +18,7 @@
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "react-multi-select-component": "^3.0.4",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
