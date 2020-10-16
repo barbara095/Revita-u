@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 240,
-    height: 230,
+    width: 260,
+    height: 240,
     overflow: 'auto',
   },
   button: {
@@ -53,6 +53,8 @@ export default function CarbSwaps() {
       'Brown rice',
       'Cauliflower rice',
       'Whole-wheat flour',
+      'Quinoa',
+      'Zoodles'
     ]
   );
 

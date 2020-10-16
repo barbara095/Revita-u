@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Sansita+Swashed&family=Spartan:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200&display=swap');
 
 .jumbotron {
   background-image: url("../../assets/images/cooking.jpg");
@@ -6,13 +6,11 @@
   height: 250px;
   background-size: cover;
   text-align: center;
-  /* filter: brightness(95%); */
-  
 }
 
 .jumbotron-header {
-  font-family: 'Raleway', sans-serif;
-  color: rgb(43, 40, 40);
+  font-family: 'Arima Madurai', cursive;
+  color: rgb(6, 59, 49);
   bottom: 0;
-  align-self: flex-end;
+  font-size: 34px;
 }

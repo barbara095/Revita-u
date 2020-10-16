@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Container } from "../Grid";
-import Card from "../Card";
+import { Header } from "semantic-ui-react";
 import Wrapper from "../Wrapper";
-import { substitute, diet, allergies } from "../Dropdown";
-import DropDown from "../Dropdown";
-import IngredientsSearch from "../ingredientsSearch";
-import IngredientsResults from "../ingredientsResults";
-import SearchForm from "../searchForm";
-import FormBtn from "../Button";
 import CarbSwaps from "../carbSwaps";
-import DairySwaps from "../dairySwap";
+import DairySwaps from "../dairySwaps";
+import SweetSwaps from "../sweetSwaps";
 import API from "../../utils/API";
 import './style.css';
 
@@ -35,29 +30,30 @@ function IngredientsContainer() {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-
-    console.log(searchIngredients)
-    API.searchIngredient(searchIngredients)
-      .then(ingredients => {
-        console.log(ingredients);
-        if (ingredients.length === 0) {
-          throw new Error("No ingredients found");
-        }
-        setIngredients(ingredients);
-        // setTitle(res.data.title);
-      })
-      .catch(err => console.log(err));
+    setIngredients(ingredients);
   }
 
   return (
     <div className="ingredients-container">
       <Container fluid style={{ minHeight: "100vh" }} >
         <Wrapper className="wrapper-ingredients">
-          
+
           <div className="ingredients-search">
-            What did you swap out today? 
-            <CarbSwaps />
-            <DairySwaps />
+            What have you swapped out today?
+            <Header /> Carbs
+            <CarbSwaps
+              value={ingredients}
+              handleInputChange={handleInputChange}
+            />
+            <Header /> Dairy
+            <DairySwaps
+              value={ingredients}
+              handleInputChange={handleInputChange}
+            />
+            <Header /> Sweets
+              <SweetSwaps
+              value={ingredients}
+              handleInputChange={handleInputChange} />
             {/* <IngredientsSearch 
               value={ingredients}
               handleInputChange={handleInputChange}

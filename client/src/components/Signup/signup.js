@@ -12,6 +12,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -29,9 +30,7 @@ function Signup() {
         console.log(response)
         if (response.data) {
           console.log("Successfully signed up")
-          this.setState({
-            redirectTo: '/login'
-          })
+          setLoggedIn(loggedIn);
         } else {
           console.log("Error signing up")
         }
@@ -88,7 +87,7 @@ function Signup() {
                       Submit
                   </button>
                   </Col>
-
+                  {/* {loggedIn ? <Redirect to="/login" /> : <Signup />} */}
                 </Form>
               </Segment>
 

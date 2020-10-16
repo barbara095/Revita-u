@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 240,
-    height: 230,
+    width: 260,
+    height: 240,
     overflow: 'auto',
   },
   button: {
@@ -37,18 +37,18 @@ export default function SweetSwaps() {
   const [left, setLeft] = React.useState(
     [
       'Sugar', 
-      'White bread', 
-      'Potato chips', 
-      'White Potatoes', 
-      'White rice'
+      'Ice cream', 
+      'Pancakes', 
+      'Tarts / slices', 
+      'Cake'
     ]);
   const [right, setRight] = React.useState(
     [
-      'Wholemeal / spelt pasta', 
-    'Multi-grain / Whole wheat bread', 
-    'Zucchini chips / Sweet potato chips', 
-    'Sweet potatoes', 
-    
+      'Stevia',
+      'Yoghurt', 
+      'Fruit', 
+      'Dark chocolate', 
+      'Energy balls'
    ]);
 
   const leftChecked = intersection(checked, left);

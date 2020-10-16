@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 240,
-    height: 230,
+    width: 260,
+    height: 240,
     overflow: 'auto',
   },
   button: {
@@ -40,7 +40,8 @@ export default function DairySwaps() {
       'Cream', 
       'Sour Cream',
       'Cheese',
-      'Butter / Margarine'
+      'Butter / Margarine',
+      'Mayonnaise'
     ]
   );
   const [right, setRight] = React.useState(
@@ -49,7 +50,7 @@ export default function DairySwaps() {
       'Skim milk',
       'Almond butter',
       'Greek yoghurt',
-      ''
+      'Avocado spread'
     ]
   );
 
