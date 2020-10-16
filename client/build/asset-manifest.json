@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9929ca7a.chunk.css",
+    "main.js": "/static/js/main.4b0fa158.chunk.js",
+    "main.js.map": "/static/js/main.4b0fa158.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b899ca63.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b899ca63.js.map",
+    "static/css/2.5087b465.chunk.css": "/static/css/2.5087b465.chunk.css",
+    "static/js/2.58ae3dbc.chunk.js": "/static/js/2.58ae3dbc.chunk.js",
+    "static/js/2.58ae3dbc.chunk.js.map": "/static/js/2.58ae3dbc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5e2f09ff7d763369e745c794bd578467.js": "/precache-manifest.5e2f09ff7d763369e745c794bd578467.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.5087b465.chunk.css.map": "/static/css/2.5087b465.chunk.css.map",
+    "static/css/main.9929ca7a.chunk.css.map": "/static/css/main.9929ca7a.chunk.css.map",
+    "static/js/2.58ae3dbc.chunk.js.LICENSE.txt": "/static/js/2.58ae3dbc.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/style.css": "/static/media/signup.0961cc71.jpg",
+    "static/media/image1.png": "/static/media/image1.625aee00.png",
+    "static/media/image2.png": "/static/media/image2.40f507d2.png",
+    "static/media/image3.png": "/static/media/image3.d5b47699.png",
+    "static/media/logo.png": "/static/media/logo.87c22af7.png",
+    "static/media/smart-swaps.jpg": "/static/media/smart-swaps.564b7198.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b899ca63.js",
+    "static/css/2.5087b465.chunk.css",
+    "static/js/2.58ae3dbc.chunk.js",
+    "static/css/main.9929ca7a.chunk.css",
+    "static/js/main.4b0fa158.chunk.js"
+  ]
+}

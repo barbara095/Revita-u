@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Slab:wght@300&family=Sansita+Swashed&family=Spartan:wght@100&display=swap');
+
+.recipe-results {
+  position: relative;
+  align-content: center;
+  margin: 0 auto 0 auto;
+  font-size: 14px; 
+  color: rgb(3, 3, 3);
+  line-height: 0.5rem;
+  left: 50%;
+  right: 50%;
+}
+
+.list-group-item {
+  align-content: center;
+  line-height: 0.5vw;
+}
+
+.recipe-title {
+  font-family: 'Raleway', sans-serif;
+}
+
+.recipe-text {
+  font-family: 'Roboto Slab', serif;
+}

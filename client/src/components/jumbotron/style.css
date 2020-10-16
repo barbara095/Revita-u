@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200&display=swap');
+
+.jumbotron {
+  background-image: url("../../assets/images/cooking.jpg");
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  text-align: center;
+}
+
+.jumbotron-header {
+  font-family: 'Arima Madurai', cursive;
+  color: rgb(6, 59, 49);
+  bottom: 0;
+  font-size: 34px;
+}

@@ -7,8 +7,8 @@ const foodSchema = new Schema(
     food: [
       {
         //  type of food (i.e.: veges, grains, dairy)
-        type: {
-            String,  
+        category: {
+            type: String,  
             trim: true,
           }
       },
@@ -17,7 +17,7 @@ const foodSchema = new Schema(
         name: {
           type: String,
           trim: true,
-          required: "Please enter a food"
+
         }
       },
         //  nutrition information

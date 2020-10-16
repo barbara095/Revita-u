@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
 import { Col, Row, Container } from "../Grid";
 import Wrapper from "../Wrapper";
 import SearchForm from "../searchForm";
 import Card from "../Card";
 import RecipeResults from "../recipeResults";
 import { Grid } from 'semantic-ui-react';
+import { useStoreContext } from "../../utils/globalstate";
+import JumbotronCont from "../jumbotron";
 import FormBtn from "../Button";
 import API from "../../utils/API";
 import './style.css';
+import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../../utils/actions";
 
-function RecipeContainer() {
+function RecipeContainer(props) {
 
   const [recipes, setRecipes] = useState([]);
   const [searchRecipes, setSearch] = useState("");
@@ -22,16 +25,14 @@ function RecipeContainer() {
     setSearch(e.target.value);
   }
 
-  useEffect(() => {
-    if (!recipes) {
-      return;
-    }
 
-  }, [recipes]);
+  const handleInputChange = e => {
+    const { value } = e.target;
+    setSearch(value);
+  }
 
   const handleFormSubmit = e => {
     e.preventDefault();
-
     console.log(searchRecipes);
     API.searchRecipe(searchRecipes)
     .then(recipes => {
@@ -76,7 +77,6 @@ function RecipeContainer() {
     </Container>
     </>
   );
-
 };
 
 export default RecipeContainer;

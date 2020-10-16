@@ -5,11 +5,7 @@ import { Container } from "../components/Grid";
 
 function Recipe() {
     return (
-      <Container fluid>
-        <Wrapper>
       <RecipeContainer />
-      </Wrapper>
-      </Container>
     );
   
 };

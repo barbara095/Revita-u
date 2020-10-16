@@ -6,6 +6,8 @@ import Footer from "./components/Footer/index";
 import Substitution from "./pages/home";
 import Recipe from "./pages/recipes";
 import Saved from "./pages/saved";
+import Signup from "./pages/signup";
+import LogIn from "./pages/login";
 import './App.css';
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={Substitution} />
             <Route exact path="/recipes" component={Recipe} />
-            <Route exact path="/saved"  />
+            <Route exact path="/saved" component={Saved} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={LogIn} />
           </Switch>
           </Wrapper>
         <Footer />

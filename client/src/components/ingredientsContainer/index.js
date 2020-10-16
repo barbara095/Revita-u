@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Container } from "../Grid";
+import { Header } from "semantic-ui-react";
 import Wrapper from "../Wrapper";
-import SearchForm from "../searchForm";
-import RecipeCard from "../Card";
-import FormBtn from "../Button";
+import CarbSwaps from "../carbSwaps";
+import DairySwaps from "../dairySwaps";
+import SweetSwaps from "../sweetSwaps";
 import API from "../../utils/API";
+import './style.css';
 
 function IngredientsContainer() {
 
@@ -13,8 +15,7 @@ function IngredientsContainer() {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
-  
-  
+
   const handleInputChange = e => {
     const { value } = e.target;
     setSearch(value);
@@ -29,59 +30,57 @@ function IngredientsContainer() {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-
-    API.searchIngredient(searchIngredients)
-    .then(res => {
-      if (res.data.length === 0) {
-        throw new Error("No ingredients found");
-      }
-      if (res.data.status === "error") {
-        throw new Error(res.data.message);
-      }
-      console.log(res.data);
-      setIngredients(res.data);
-      setTitle(res.data.title);
-    })
-    .catch(err => console.log(err));
+    setIngredients(ingredients);
   }
 
   return (
-    <>
-    <Container fluid style={{ minHeight: "100vh" }} >
-      <Wrapper className="wrapper-recipe">
-      <Row>
-        <Col size="sm-8">
-          <SearchForm
-            value={searchIngredients}
-            onChange={handleInputChange}
-            placeholder="What food would you like to substitute?"
-          />
-          <FormBtn
-            onClick={handleFormSubmit}
-            type="success"
-          >
-          </FormBtn>
-        </Col>
-      </Row>
-      <Col size="sm-6">
-            {/* <RecipeCard>
-              {recipes.map(recipe => { 
-                return (
-                  <RecipeResults
-                    results={recipes}
-                    key={recipe.title}
-                    title={recipe.title}
-                    // url={recipe.url}
-                    // source={recipe.source}
-                  />
-                )}
-              )}
+    <div className="ingredients-container">
+      <Container fluid style={{ minHeight: "100vh" }} >
+        <Wrapper className="wrapper-ingredients">
 
-            </RecipeCard> */}
-      </Col>
-      </Wrapper>
-    </Container>
-    </>
+          <div className="ingredients-search">
+            What have you swapped out today?
+            <Header /> Carbs
+            <CarbSwaps
+              value={ingredients}
+              handleInputChange={handleInputChange}
+            />
+            <Header /> Dairy
+            <DairySwaps
+              value={ingredients}
+              handleInputChange={handleInputChange}
+            />
+            <Header /> Sweets
+              <SweetSwaps
+              value={ingredients}
+              handleInputChange={handleInputChange} />
+            {/* <IngredientsSearch 
+              value={ingredients}
+              handleInputChange={handleInputChange}
+              placeholder="What food would you like to substitute?"
+            />
+            <FormBtn
+              onClick={handleFormSubmit}
+              type="success"
+            >
+            </FormBtn>
+            <DropDown />
+            
+          <Row>
+            <Col size="sm-6">
+              <Card>
+
+                <IngredientsResults
+                  results={ingredients}
+                  
+                />
+              </Card>
+            </Col>
+          </Row> */}
+          </div>
+        </Wrapper>
+      </Container>
+    </div>
   );
 
 };

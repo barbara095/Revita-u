@@ -1,24 +1,5 @@
-.wrapper-recipe {
-  margin: 0 auto 0 auto;
-  width: 100%;
-  background-color: cadetblue;
-}
-
-.container-recipe {
-  margin: 0 auto 0 auto;
-  width: 100%;
-  background-color: cadetblue;
-}
-
 .recipe-search-form {
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 0 auto;
-  background-color: lemonchiffon;
-  left: 50%;
-  right: 50%;
-  margin: auto;
-  align-content: center;
-  justify-content: center;
+  justify-content: center; 
   text-align: center;
+  margin: 0 auto 0 auto;
 }
