@@ -14,7 +14,7 @@ router.get('/user', (req, res, next) => {
 
 router.post('/signup', (req, res, next) => {
   const { firstName, lastName, username, password } = req.body;
-
+  
   User.findOne({
     'username': username
   }, (err, userFind) => {

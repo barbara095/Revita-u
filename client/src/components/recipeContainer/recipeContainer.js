@@ -35,17 +35,16 @@ function RecipeContainer(props) {
         setTitle(recipes.title);
         setUrl(recipes.url);
         setIngredients(recipes.ingredients)
-        
       })
       .catch(err => console.log(err));
   };
 
-
   const handleSaved = id => {
 
     let recipeSaved = recipes.filter(
-      (recipeSaved) => recipeSaved.id === id
+      (recipe) => recipe.id === id
     );
+    console.log(recipeSaved);
 
     API.saveRecipe({
         recipeId: recipeSaved.id,
@@ -61,10 +60,9 @@ function RecipeContainer(props) {
         // protein: recipeSaved.totalNutrients.PROCNT.quantity,
         // sugar: recipeSaved.totalNutrients.SUGAR.quantity,
         // sodium: recipeSaved.totalNutrients.NA.quantity,
-      }).then(() => setSearch);
+      }).then(() => handleFormSubmit.bind(this));
       
   };
-
 
   return (
     <div className="recipe-container">
@@ -94,7 +92,6 @@ function RecipeContainer(props) {
                     url={url}
                     ingredients={ingredients}
                     handleSaved={handleSaved}
-     
                   />
                 
               </Col>

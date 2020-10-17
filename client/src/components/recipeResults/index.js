@@ -27,8 +27,9 @@ function RecipeResults(props) {
                   <p>Sugar: {recipe.sugar}</p>
                   <p>Sodium: {recipe.sodium}</p>
               </div>
+              
             <Button className="saveRecipe btn btn-primary ml-auto mr-2"
-                id={recipe.id} 
+                id={props.id} 
                 onClick={props.handleSaved}
              >Save
             </Button>

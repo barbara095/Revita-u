@@ -21,7 +21,7 @@ function Signup() {
     console.log("username is " + username);
     console.log("password is " + password);
     
-    axios.post('/signup', {
+    axios.post('/auth/signup', {
       username: username,
       password: password
     })

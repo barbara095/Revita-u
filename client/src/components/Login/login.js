@@ -44,8 +44,10 @@ function Login() {
             <div className="sign-in-header">
               <h3 className="header">Welcome to Revita-U!</h3>
             </div>
-            <form onSubmit={handleSubmit}>
-              <Form inverted>
+            
+              <Form 
+                inverted
+                onSubmit={handleSubmit}>
                 <div className="form-group">
                   <Form.Input
                     fluid label="Username"
@@ -68,7 +70,7 @@ function Login() {
                 </button>
                 </Col>
               </Form>
-            </form>
+         
           </Segment>
         </Col>
         </Row>
