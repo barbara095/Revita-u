@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Header } from "semantic-ui-react";
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -118,6 +119,7 @@ export default function SweetSwaps() {
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
       <Grid item>{customList(left)}</Grid>
       <Grid item>
+      <Header>Sweets</Header>
         <Grid container direction="column" alignItems="center">
           <Button
             variant="outlined"

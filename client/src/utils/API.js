@@ -55,46 +55,21 @@ export default {
   },
 
   deleteRecipe: function (id) {
-    return axios.get("/api/recipes/" + id);
+    return axios.delete("/api/recipes/" + id);
   },
 
   saveRecipe: function (savedRecipes) {
-    return axios.get("/api/recipes", savedRecipes);
+    return axios.post("/api/recipes", savedRecipes);
   },
 
-  searchIngredient: function (query) {
-    return new Promise((resolve, reject) => {
-      axios
-        .get(ingredientURL + query, {
-          'headers': {
-            'Authorization': 'Token' + ingredientAPI,
-            "Access-Control-Allow-Origin": ingredientURL,
-            // "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-            // "Access-Control-Allow-Headers": "X - PINGOTHER, Content- Type"
-          }, 
-          "params": { "q": query }
-          })
-        .then(res => {
-          const ingredients = res.data;
-          console.log(ingredients);
-          const results = ingredients.map(({ ingredient }) => {
-            return {
-              substitution: ingredient.ingredients.alternatives
-            };
-          })
-          resolve(results);
-        })
-        .catch(err => reject(err));
-  })
-},
 
-getSubstitutes: function () {
-  return axios.get("/api/substitutes");
-},
+  getSubstitutes: function () {
+    return axios.get("/api/substitutes");
+  },
 
-getSubstitute: function (id) {
-  return axios.get("/api/substitutes/" + id);
-},
+  getSubstitute: function (id) {
+    return axios.get("/api/substitutes/" + id);
+  },
 };
 
 

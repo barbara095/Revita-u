@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from 'semantic-ui-react';
 import Card from "../Card";
 import "./style.css";
 
@@ -26,9 +27,11 @@ function RecipeResults(props) {
                   <p>Sugar: {recipe.sugar}</p>
                   <p>Sodium: {recipe.sodium}</p>
               </div>
-            <button className="saveRecipe btn btn-primary ml-auto mr-2" id={recipe.id} onClick={(event) => props.handleSaved(event)}
-            >{recipe.buttonText}
-            </button>
+            <Button className="saveRecipe btn btn-primary ml-auto mr-2"
+                id={recipe.id} 
+                onClick={props.handleSaved}
+             >Save
+            </Button>
             
             <a href="/saved">
             <button className="viewSavedBtn btn btn-light ml-auto mr-3">

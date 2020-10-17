@@ -2,15 +2,11 @@ import React, { useEffect, useState, Component } from "react";
 import { Col, Row, Container } from "../Grid";
 import Wrapper from "../Wrapper";
 import SearchForm from "../searchForm";
-import Card from "../Card";
 import RecipeResults from "../recipeResults";
-import { Grid } from 'semantic-ui-react';
-import { useStoreContext } from "../../utils/globalstate";
 import JumbotronCont from "../jumbotron";
 import FormBtn from "../Button";
 import API from "../../utils/API";
 import './style.css';
-import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../../utils/actions";
 
 function RecipeContainer(props) {
 
@@ -19,7 +15,6 @@ function RecipeContainer(props) {
   const [title, setTitle] = useState([""]);
   const [url, setUrl] = useState([""]);
   const [ingredients, setIngredients] = useState([""]);
-
 
   const handleInputChange = e => {
     const { value } = e.target;
@@ -45,32 +40,29 @@ function RecipeContainer(props) {
       .catch(err => console.log(err));
   };
 
-  const handleSaved = e => {
-    e.preventDefault();
-    console.log(recipes);
-    console.log(e.target.id);
-    // dispatch({
-    //   type: ADD_FAVORITE,
-    //   post: state.currentPost
-    // })
 
-    let savedRecipes = recipes.filter(
-      (recipe) => recipe.id === e.target.id
+  const handleSaved = id => {
+
+    let recipeSaved = recipes.filter(
+      (recipeSaved) => recipeSaved.id === id
     );
-    savedRecipes = savedRecipes[0];
 
-    API.saveRecipe(savedRecipes)
-      .then(setRecipes(recipes.map(recipe => {
-          if (recipe.id === e.target.id) {
-            return {
-              ...recipe, buttonText: "Saved"
-            }
-          } else {
-            return recipe;
-          }
-        })
-      ))
-      .catch((error) => console.log("Error", error));
+    API.saveRecipe({
+        recipeId: recipeSaved.id,
+        title: recipeSaved.title,
+        image: recipeSaved.image,
+        url: recipeSaved.url,
+        source: recipeSaved.source,
+        ingredients: recipeSaved.ingredientLines,
+        labels: recipeSaved.healthLabels,
+        calories: recipeSaved.calories,
+        // carbs: recipeSaved.totalNutrients.CHOCDF.quantity,
+        // fat: recipeSaved.totalNutrients.FAT.quantity,
+        // protein: recipeSaved.totalNutrients.PROCNT.quantity,
+        // sugar: recipeSaved.totalNutrients.SUGAR.quantity,
+        // sodium: recipeSaved.totalNutrients.NA.quantity,
+      }).then(() => setSearch);
+      
   };
 
 
@@ -102,6 +94,7 @@ function RecipeContainer(props) {
                     url={url}
                     ingredients={ingredients}
                     handleSaved={handleSaved}
+     
                   />
                 
               </Col>

@@ -5,7 +5,6 @@ import Wrapper from "../Wrapper";
 import CarbSwaps from "../carbSwaps";
 import DairySwaps from "../dairySwaps";
 import SweetSwaps from "../sweetSwaps";
-import API from "../../utils/API";
 import './style.css';
 
 function IngredientsContainer() {
@@ -38,19 +37,20 @@ function IngredientsContainer() {
       <Container fluid style={{ minHeight: "100vh" }} >
         <Wrapper className="wrapper-ingredients">
 
-          <div className="ingredients-search">
+          <div className="substitute">
+            <div className="substitute-header">
             What have you swapped out today?
-            <Header /> Carbs
+            </div>
             <CarbSwaps
               value={ingredients}
               handleInputChange={handleInputChange}
             />
-            <Header /> Dairy
+            
             <DairySwaps
               value={ingredients}
               handleInputChange={handleInputChange}
             />
-            <Header /> Sweets
+            
               <SweetSwaps
               value={ingredients}
               handleInputChange={handleInputChange} />

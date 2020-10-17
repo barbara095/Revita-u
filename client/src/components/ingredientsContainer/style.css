@@ -4,3 +4,11 @@
   margin: 0 auto 0 auto;
   padding-top: 20px;
 }
+
+.substitute-header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  padding: 30px;
+}
