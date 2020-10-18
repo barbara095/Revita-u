@@ -55,11 +55,7 @@ function RecipeContainer(props) {
         ingredients: recipeSaved.ingredientLines,
         labels: recipeSaved.healthLabels,
         calories: recipeSaved.calories,
-        // carbs: recipeSaved.totalNutrients.CHOCDF.quantity,
-        // fat: recipeSaved.totalNutrients.FAT.quantity,
-        // protein: recipeSaved.totalNutrients.PROCNT.quantity,
-        // sugar: recipeSaved.totalNutrients.SUGAR.quantity,
-        // sodium: recipeSaved.totalNutrients.NA.quantity,
+        
       }).then(() => handleFormSubmit.bind(this));
       
   };

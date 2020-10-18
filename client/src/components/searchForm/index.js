@@ -4,7 +4,7 @@ import "./style.css";
 
 function SearchForm(props) {
     return (
-        <form className="search">
+        <form className="search-recipes">
             <div className="form-group">
                 <label>{props.label}</label>
                     <SearchInput

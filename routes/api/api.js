@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const RecipeController = require("../../controller/controller.js");
 
-// Matches with "/api/Recipe"
 router
   .route("/")
   .get(RecipeController.findAll)

@@ -6,6 +6,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+
 // Requiring express session to handle unique sessions
 const session = require("express-session");
 // Requiring passport as we've configured it

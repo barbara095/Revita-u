@@ -9,8 +9,8 @@ import "./style.css";
 
 function CarouselHome() {
   return (
-    <div className="carousel-container">
-      <Container fluid>
+    <div className="carousel-container" >
+      <Container fluid style={{ 'width': '100%' }}>
         <Carousel style={{ overflow: 'hidden' }}>
           <Carousel.Item style={{ 'height': '100%' }}>
             <img style={{ 'height': '100%' }}
@@ -31,8 +31,8 @@ function CarouselHome() {
             />
 
             <Carousel.Caption className="caption">
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3></h3>
+              <p>A platform that motivates you to start your healthy eating journey</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={{ 'height': '100%' }}>
@@ -43,10 +43,8 @@ function CarouselHome() {
             />
 
             <Carousel.Caption className="caption">
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+              <h3>Your personal food buddy</h3>
+              <p>Reach your goals by keeping track of what foods you swapped out </p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -58,9 +56,10 @@ function CarouselHome() {
             />
 
             <Carousel.Caption className="caption">
-              <h3>Third slide label</h3>
+              <h3>Stay in the loop</h3>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                Subscribe to our newsletter to receive the latest hacks and 
+                tips on establishing a healthier relationship with food.
           </p>
             </Carousel.Caption>
           </Carousel.Item>

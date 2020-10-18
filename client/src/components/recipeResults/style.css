@@ -6,9 +6,21 @@
   margin: 0 auto 0 auto;
   font-size: 14px; 
   color: rgb(3, 3, 3);
-  line-height: 0.5rem;
+  line-height: 0rem;
   left: 50%;
   right: 50%;
+}
+
+.recipe-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 0.5rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+.recipe-source,
+.recipe-link {
+  font-size: 11px;
 }
 
 .list-group-item {
@@ -20,6 +32,6 @@
   font-family: 'Raleway', sans-serif;
 }
 
-.recipe-text {
-  font-family: 'Roboto Slab', serif;
+.btn.btn-primary {
+  padding: 10px;
 }

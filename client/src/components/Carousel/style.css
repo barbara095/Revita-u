@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+
 .carousel-container {
   position: relative;
   width: 100%;
+  font-family: 'Crimson Text', serif;
+  
 }
 
 .caption {
   font-size: 50px;
   top: 50%;
   bottom: 50%;
- 
+  color: rgb(31, 30, 30);
 }
 
 .carousel-container {
-  filter: brightness(90%);
+  filter: brightness(85%);
   width: 100%;
 }

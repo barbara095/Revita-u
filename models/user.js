@@ -8,29 +8,23 @@ const userSchema = new mongoose.Schema({
   
   firstName: {
     type: String,
-    unique: false, 
-    allowNull: false,
-    required: false
+    unique: false,
   },
 
   lastName: {
     type: String,
     unique: false, 
-    allowNull: false,
-    required: false
   },
 
   username: {
     type: String,
     unique: false, 
-    allowNull: false,
     required: false
   },
 
   password: {
     type: String,
     unique: false,
-    allowNull: false, 
     required: false
   }
 

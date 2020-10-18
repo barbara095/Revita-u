@@ -12,7 +12,7 @@ router.get('/user', (req, res, next) => {
   }
 });
 
-router.post('/signup', (req, res, next) => {
+router.post('/signup', (req, res) => {
   const { firstName, lastName, username, password } = req.body;
   
   User.findOne({
@@ -35,28 +35,26 @@ router.post('/signup', (req, res, next) => {
     })
   })
   
-  if (req.user) {
-    return res.json({ user: req.user })
-  } else {
-    return res.json({ user: null })
-  }
 });
 
 router.post('/login', (req, res, next) => {
     console.log(req.body)
     next()
   },
-  passport.authenticate('username'),
+  passport.authenticate('local'),
 	(req, res) => {
     console.log('POST to /login')
-    
-		const user = JSON.parse(JSON.stringify(req.user)) // hack
-		const cleanUser = Object.assign({}, user)
-		if (cleanUser.local) {
-			console.log(`Deleting ${cleanUser.local.password}`)
-			delete cleanUser.local.password
-		}
-		res.json({ user: cleanUser })
+    const userInfo = {
+      username: req.user.usrename
+    };
+    res.send(userInfo);
+		// const user = JSON.parse(JSON.stringify(req.user)) 
+		// const cleanUser = Object.assign({}, user)
+		// if (cleanUser.local) {
+		// 	console.log(`Deleting ${cleanUser.local.password}`)
+		// 	delete cleanUser.local.password
+		// }
+		// res.json({ user: cleanUser })
 	}
 );
 
