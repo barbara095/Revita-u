@@ -3,3 +3,11 @@
 .dairy-header {
   font-family: 'BioRhyme', serif;
 }
+
+.dairy-right {
+  background-color: rgb(95, 160, 140);
+}
+
+.dairy-left {
+  background-color: rgb(212, 129, 134);
+}

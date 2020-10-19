@@ -25,7 +25,6 @@ function RecipeContainer(props) {
   const handleFormSubmit = e => {
     e.preventDefault();
     
-
     API.searchRecipe(searchRecipes)
       .then(recipes => {
         console.log(recipes);

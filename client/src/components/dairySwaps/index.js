@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 200,
+    width: 260,
     height: 240,
     overflow: 'auto',
   },
@@ -121,8 +121,8 @@ export default function DairySwaps() {
 
   return (
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
-      <Grid item>{customList(left)}</Grid>
-      <Grid item>
+      <Grid item className="dairy-left" >{customList(left)}</Grid>
+      <Grid item >
       <Header className="dairy-header">Dairy</Header>
         <Grid container direction="column" alignItems="center">
           <Button
@@ -167,7 +167,7 @@ export default function DairySwaps() {
           </Button>
         </Grid>
       </Grid>
-      <Grid item>{customList(right)}</Grid>
+      <Grid item className="dairy-right">{customList(right)}</Grid>
     </Grid>
   );
 }

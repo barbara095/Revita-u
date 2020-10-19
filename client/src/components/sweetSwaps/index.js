@@ -9,13 +9,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import './style.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 'auto',
   },
   paper: {
-    width: 200,
+    width: 260,
     height: 240,
     overflow: 'auto',
     float: 'left',
@@ -118,7 +119,7 @@ export default function SweetSwaps() {
 
   return (
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
-      <Grid item>{customList(left)}</Grid>
+      <Grid item className="sweets-left">{customList(left)}</Grid>
       <Grid item>
       <Header>Sweets</Header>
         <Grid container direction="column" alignItems="center">
@@ -164,7 +165,7 @@ export default function SweetSwaps() {
           </Button>
         </Grid>
       </Grid>
-      <Grid item>{customList(right)}</Grid>
+      <Grid item className="sweets-right">{customList(right)}</Grid>
     </Grid>
   );
 }

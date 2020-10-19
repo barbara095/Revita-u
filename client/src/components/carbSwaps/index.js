@@ -9,13 +9,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import './style.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 'auto',
   },
   paper: {
-    width: 200,
+    width: 260,
     height: 240,
     overflow: 'auto',
   },
@@ -124,7 +125,7 @@ export default function CarbSwaps() {
 
   return (
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
-      <Grid item>{customList(left)}</Grid>
+      <Grid item className="carbs-left">{customList(left)}</Grid>
       <Grid item>
       <Header>Carbs</Header>
         <Grid container direction="column" alignItems="center">
@@ -170,7 +171,7 @@ export default function CarbSwaps() {
           </Button>
         </Grid>
       </Grid>
-      <Grid item>{customList(right)}</Grid>
+      <Grid item className="carbs-right">{customList(right)}</Grid>
     </Grid>
   );
 }
