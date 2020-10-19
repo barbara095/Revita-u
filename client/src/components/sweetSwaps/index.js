@@ -15,9 +15,10 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 260,
+    width: 200,
     height: 240,
     overflow: 'auto',
+    float: 'left',
   },
   button: {
     margin: theme.spacing(0.5, 0),

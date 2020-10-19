@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { Form, Segment } from 'semantic-ui-react';
 import { Container, Row, Col } from "../Grid";
+import "./style.css";
 
 class Login extends Component {
   // const [username, setUsername] = useState("");
@@ -13,7 +14,8 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      redirectTo: null
+      redirectTo: null,
+      user: null
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,11 +31,8 @@ class Login extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log("username is " + this.state.username);
-    console.log("password is " + this.state.password)
-    // this.props.login(this.state.username, this.state.password)
-    // this.setState({
-    //   redirectTo: '/'
-    // })
+    console.log("password is " + this.state.password);
+    
     axios
       .post('/auth/login', {
       firstName: this.state.firstName,
@@ -46,11 +45,9 @@ class Login extends Component {
         console.log(response)
 
         if (response.status === 200) {
-          this.props.updateUser({
-            loggedIn: true,
-            username: response.data.username
-          })
           this.setState({
+            loggedIn: true,
+            user: response.data.user,
             redirectTo: '/'
           })
         }
@@ -65,12 +62,12 @@ class Login extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <div className="sign-in-form">
+        <div className="login-form">
           <Container className="container" fluid>
             <Row>
               <Col size="md-4" mx auto >
                 <Segment inverted>
-                  <div className="sign-in-header">
+                  <div className="login-header">
                     <h3 className="header">Welcome to Revita-U!</h3>
                   </div>
 

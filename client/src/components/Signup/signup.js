@@ -71,7 +71,7 @@ class Signup extends Component {
       <div className="sign-in-form">
         <Container className="container" fluid>
           <div className="signup-wrap">
-            <Row>
+            <Row className="row">
               <Col size="md-4">
                 <Segment inverted className="sign-in-segment">
                   <h3 className="header">Welcome to Revita-U!</h3>

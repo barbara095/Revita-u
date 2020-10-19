@@ -4,10 +4,6 @@ import axios from "axios";
 const recipeURL = "https://edamam-recipe-search.p.rapidapi.com/search";
 const recipeAPI = "435f0cdaeamshd0fe4e59b8a1c27p16ae90jsn8bb53a2736cc";
 
-// BonAPI allows us to search for food alternatives 
-const ingredientURL = "https://bon-api.com/api/v1/ingredient/alternatives/";
-const ingredientAPI = "3112184fd50f665cccb860f7e34f8ae55ebc2ece";
-
 export default {
   searchRecipe: function (query) {
     return new Promise((resolve, reject) => {

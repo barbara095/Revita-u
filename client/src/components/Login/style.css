@@ -1,0 +1,10 @@
+.login-form {
+  border-radius: 0rem;
+  min-height: 600px;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/images/signup.jpg");
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+}

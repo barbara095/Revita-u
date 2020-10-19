@@ -5,6 +5,7 @@ import Wrapper from "../Wrapper";
 import CarbSwaps from "../carbSwaps";
 import DairySwaps from "../dairySwaps";
 import SweetSwaps from "../sweetSwaps";
+import Moment from 'react-moment';
 import './style.css';
 
 function IngredientsContainer() {
@@ -20,26 +21,22 @@ function IngredientsContainer() {
     setSearch(value);
   }
 
-  useEffect(() => {
-    if (!ingredients) {
-      return;
-    }
-
-  }, [ingredients]);
-
   const handleFormSubmit = e => {
     e.preventDefault();
     setIngredients(ingredients);
+
   }
+
+  const dateToFormat = 'D MM YYYY';
 
   return (
     <div className="ingredients-container">
       <Container fluid style={{ minHeight: "100vh" }} >
         <Wrapper className="wrapper-ingredients">
-
+          
           <div className="substitute">
             <div className="substitute-header">
-            What have you swapped out today?
+            What do you want to swap out today?
             </div>
             <CarbSwaps
               value={ingredients}

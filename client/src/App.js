@@ -16,14 +16,14 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: null
+      user: null
     }
 
     this.getUser = this.getUser.bind(this)
     this.componentDidMount = this.componentDidMount.bind(this)
     this.updateUser = this.updateUser.bind(this)
-    // this.logout = this.logout.bind(this)
-		// this.login = this.login.bind(this)
+    this._logout = this._logout.bind(this)
+		this._login = this._login.bind(this)
   }
 
   updateUser(userObject) {
@@ -36,7 +36,7 @@ class App extends Component {
 
   getUser() {
     axios
-      .get('/auth/')
+      .get('/auth/user')
       .then(response => {
         console.log('User response: ')
         console.log(response.data)
@@ -45,7 +45,7 @@ class App extends Component {
 
           this.setState({
             loggedIn: true,
-            user: response.data.user.username
+            user: response.data.user
           })
         } else {
           console.log('No user');
@@ -57,34 +57,37 @@ class App extends Component {
       })
   }
   
-  // login(username, password) {
-  //   axios.post('/auth/login', {
-  //     username, password
-  //   })
-  //   .then(response => {
-  //     console.log(response)
-  //     if (response.status === 200) {
-  //       this.setState({
-  //         loggedIn: true,
-  //         user: response.data.user
-  //       })
-  //     }
-  //   })
-  // }
+  _logout(event) {
+		event.preventDefault()
+		console.log('logging out')
+		axios.post('/auth/logout').then(response => {
+			console.log(response.data)
+			if (response.status === 200) {
+				this.setState({
+					loggedIn: false,
+					user: null
+				})
+			}
+		})
+	}
 
-  // logout(event) {
-  //   axios.post('/auth/logout')
-  //   .then(response => {
-  //     console.log(response.data)
-  //     if (response.status === 200) {
-  //       this.setState({
-  //         loggedIn: false,
-  //         user: null
-  //       })
-  //     }
-  //   })
-  // }
-
+	_login(username, password) {
+		axios
+			.post('/auth/login', {
+				username,
+				password
+			})
+			.then(response => {
+				console.log(response)
+				if (response.status === 200) {
+					// update the state
+					this.setState({
+						loggedIn: true,
+						user: response.data.user
+					})
+				}
+			})
+	}
 
   render() {
     return (

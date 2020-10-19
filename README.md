@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Revita U
 
-## Available Scripts
+App: https://guarded-earth-77394.herokuapp.com/
 
-In the project directory, you can run:
+## About this application
+This application was designed with the health conscious consumer in mind, and driven in part by the increased shift towards adopting healthier eating patterns. It is mainly targeted to those who are actively trying to change their unhealthy eating habits but not sure where to start. Oftentimes, the solution to healthier eating lies in the vast array of substitutes that are available. The app serves as a journalistic tool that motivates and informs users on the range of healthier alternatives available
 
-### `npm start`
+## Functionality 
+Users can choose to swap unhealthy foods (or foods that are high in sugar, fats and carbohydrates) for healthier alternatives using the left and right boxes, where they can swap 1 or all ingredients. The app organises food into common food categories for which substitutes are available (dairy, carbs, sweets). With these healthier alternatives in mind, users can then search for recipes by ingredient, where they can save this into their library 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Story
+AS A health conscious user looking to adopt a healthier eating regime,
+WHEN I SIGN UP for an account with Revita-U,
+I WANT to be presented with a list of healthier alternatives / substitutes for foods, where I can swap out
+unhealthy foods for healthier substitutes,  
+SO THAT I can make smarter and healthier consumption choices.
+I also want to search for recipes by ingredient, which will give me nutritional information, ingredients and health labels. 
+I WANT to be able to save these recipes into
+my account so that I can retrieve them again when I log in.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Technologies
+Mern (Mongoose / MongoDB, Express, React/React.js, Node.js)
+Passport.js
+Edamam API
+Semantic UI React, Material UI, Bootstrap React, Evergreen UI
 
-### `npm test`
+## Future Directions
+Adding more functionality to substitution component such as calculating nutritional information of their substituted foods. Also allowing users to log in their fitness and nutritional goals, and other health data for each day of the week. Logging in what they ate for the day or week, and calculating how much over or under they ate based on their goals or appropriate guidelines. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Application 
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Image1](client/src/assets/images/App1.png)
+![Image2](client/src/assets/images/App2.png)
+![Image3](client/src/assets/images/App3.png)

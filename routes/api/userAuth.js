@@ -44,17 +44,14 @@ router.post('/login', (req, res, next) => {
   passport.authenticate('local'),
 	(req, res) => {
     console.log('POST to /login')
-    const userInfo = {
-      username: req.user.usrename
-    };
-    res.send(userInfo);
-		// const user = JSON.parse(JSON.stringify(req.user)) 
-		// const cleanUser = Object.assign({}, user)
-		// if (cleanUser.local) {
-		// 	console.log(`Deleting ${cleanUser.local.password}`)
-		// 	delete cleanUser.local.password
-		// }
-		// res.json({ user: cleanUser })
+    const user = JSON.parse(JSON.stringify(req.user)) // hack
+		const cleanUser = Object.assign({}, user)
+		if (cleanUser.local) {
+			console.log(`Deleting ${cleanUser.local.password}`)
+			delete cleanUser.local.password
+		}
+		res.json({ user: cleanUser })
+
 	}
 );
 

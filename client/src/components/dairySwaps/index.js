@@ -9,13 +9,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import './style.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 'auto',
   },
   paper: {
-    width: 260,
+    width: 200,
     height: 240,
     overflow: 'auto',
   },
@@ -122,7 +123,7 @@ export default function DairySwaps() {
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
       <Grid item>{customList(left)}</Grid>
       <Grid item>
-      <Header>Dairy</Header>
+      <Header className="dairy-header">Dairy</Header>
         <Grid container direction="column" alignItems="center">
           <Button
             variant="outlined"

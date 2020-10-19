@@ -70,7 +70,7 @@ function RecipeContainer(props) {
             <SearchForm
               value={recipes}
               handleInputChange={handleInputChange}
-              placeholder="Search recipes by ingredient!"
+              placeholder="Search"
             />
             <FormBtn
               onClick={handleFormSubmit}
@@ -79,9 +79,7 @@ function RecipeContainer(props) {
             >
             </FormBtn>
 
-            <Row>
               <Col size="sm-6">
-                
                   <RecipeResults
                     results={recipes}
                     title={title}
@@ -89,9 +87,7 @@ function RecipeContainer(props) {
                     ingredients={ingredients}
                     handleSaved={handleSaved}
                   />
-                
               </Col>
-            </Row>
           </div>
 
         </Wrapper>
