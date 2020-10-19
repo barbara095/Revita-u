@@ -6,9 +6,7 @@ import { Container, Row, Col } from "../Grid";
 import "./style.css";
 
 class Login extends Component {
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [logIn, setLogIn] = useState(false);
+  
   constructor() {
     super()
     this.state = {
@@ -29,23 +27,25 @@ class Login extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    console.log("username is " + this.state.username);
-    console.log("password is " + this.state.password);
+    e.preventDefault()
+    console.log("username is " + this.state.username)
+    console.log("password is " + this.state.password)
     
+		// this.props._login(this.state.username, this.state.password)
+		// this.setState({
+		// 	redirectTo: '/'
+		// })
     axios
       .post('/auth/login', {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      username: this.state.username,
-      password: this.state.password
+        username: this.state.username,
+        password: this.state.password
     })
       .then(response => {
         console.log('login response')
         console.log(response)
 
         if (response.status === 200) {
-          this.setState({
+          this.updateUser({
             loggedIn: true,
             user: response.data.user,
             redirectTo: '/'

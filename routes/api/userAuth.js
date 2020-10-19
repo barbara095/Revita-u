@@ -42,17 +42,13 @@ router.post('/login', (req, res, next) => {
     next()
   },
   passport.authenticate('local'),
-	(req, res) => {
-    console.log('POST to /login')
-    const user = JSON.parse(JSON.stringify(req.user)) // hack
-		const cleanUser = Object.assign({}, user)
-		if (cleanUser.local) {
-			console.log(`Deleting ${cleanUser.local.password}`)
-			delete cleanUser.local.password
-		}
-		res.json({ user: cleanUser })
-
-	}
+    (req, res) => {
+        console.log('logged in', req.user);
+        var userInfo = {
+            username: req.user.username
+        };
+        res.send(userInfo);
+    }
 );
 
 router.post('/logout', (req, res, next) => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Component } from "react";
 import { Col, Row, Container } from "../Grid";
+import axios from 'axios';
 import Wrapper from "../Wrapper";
 import SearchForm from "../searchForm";
 import RecipeResults from "../recipeResults";
@@ -31,6 +32,7 @@ function RecipeContainer(props) {
         if (recipes.length === 0) {
           throw new Error("No recipes found");
         }
+      
         setRecipes(recipes);
         setTitle(recipes.title);
         setUrl(recipes.url);
