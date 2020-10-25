@@ -1,13 +1,13 @@
 .navbar {
   background-color: #b4dfa0;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: start;
   align-items: center;
 }
 
 .logo {
-  height: 70px;
+  height: 60px;
   padding-right: 15px;
   padding-bottom: 20px;
 }
@@ -15,6 +15,7 @@
 .menu-bars {
   margin-left: 1.5rem;
   font-size: 2rem;
+  padding-bottom: 25px;
   background: none;
 }
 

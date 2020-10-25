@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 260,
+    width: 220,
     height: 240,
     overflow: 'auto',
     float: 'left',
@@ -118,7 +118,7 @@ export default function SweetSwaps() {
   );
 
   return (
-    <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
+    <Grid container spacing={1} justify="center" alignItems="center" className="sweets-container left justified">
       <Grid item className="sweets-left">{customList(left)}</Grid>
       <Grid item>
       <Header>Sweets</Header>

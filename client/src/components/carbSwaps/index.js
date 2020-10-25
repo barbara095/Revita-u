@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 260,
+    width: 220,
     height: 240,
     overflow: 'auto',
   },
@@ -124,7 +124,7 @@ export default function CarbSwaps() {
   );
 
   return (
-    <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
+    <Grid container spacing={1} justify="center" alignItems="center" className="carbs-container left justified">
       <Grid item className="carbs-left">{customList(left)}</Grid>
       <Grid item>
       <Header>Carbs</Header>

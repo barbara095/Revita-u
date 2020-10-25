@@ -20,11 +20,7 @@ class Signup extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
   }
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [firstname, setFirstname] = useState("");
-  // const [lastname, setLastname] = useState("");
-  // const [loggedIn, setLoggedIn] = useState(null)
+  
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value

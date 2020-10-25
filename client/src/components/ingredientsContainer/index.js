@@ -1,81 +1,76 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Row, Container } from "../Grid";
-import { Header } from "semantic-ui-react";
-import Wrapper from "../Wrapper";
 import CarbSwaps from "../carbSwaps";
 import DairySwaps from "../dairySwaps";
 import SweetSwaps from "../sweetSwaps";
-import Moment from 'react-moment';
+import SearchForm from "../searchForm";
+import FormBtn from "../Button";
+import Nutrition from "../nutritionQuestion";
+import API from "../../utils/API";
 import './style.css';
 
 function IngredientsContainer() {
 
-  const [ingredients, setIngredients] = useState([]);
-  const [searchIngredients, setSearch] = useState("");
-  const [title, setTitle] = useState("");
-  const [url, setUrl] = useState("");
-  const [description, setDescription] = useState("");
+  const [nutrition, setNutrition] = useState([]);
+  const [answer, setAnswer] = useState("");
+  const [image, setImage] = useState([""]);
 
   const handleInputChange = e => {
     const { value } = e.target;
-    setSearch(value);
+    setNutrition(value);
   }
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    setIngredients(ingredients);
 
-  }
+    API.searchNutrition(nutrition)
+      .then(res => {
+        console.log(res.data);
+        if (res.data.length === 0) {
+          throw new Error("No recipes found");
+        }
+        setAnswer(res.data.answer);
+        setImage(res.data.image);
 
-  const dateToFormat = 'D MM YYYY';
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
     <div className="ingredients-container">
       <Container fluid style={{ minHeight: "100vh" }} >
-        <Wrapper className="wrapper-ingredients">
-          
-          <div className="substitute">
-            <div className="substitute-header">
+        <div className="substitute">
+          <div className="nutrition-header">
             What do you want to swap out today?
-            </div>
-            <CarbSwaps
-              value={ingredients}
-              handleInputChange={handleInputChange}
-            />
-            
-            <DairySwaps
-              value={ingredients}
-              handleInputChange={handleInputChange}
-            />
-            
-              <SweetSwaps
-              value={ingredients}
-              handleInputChange={handleInputChange} />
-            {/* <IngredientsSearch 
-              value={ingredients}
-              handleInputChange={handleInputChange}
-              placeholder="What food would you like to substitute?"
-            />
-            <FormBtn
-              onClick={handleFormSubmit}
-              type="success"
-            >
-            </FormBtn>
-            <DropDown />
-            
-          <Row>
-            <Col size="sm-6">
-              <Card>
-
-                <IngredientsResults
-                  results={ingredients}
-                  
-                />
-              </Card>
-            </Col>
-          </Row> */}
-          </div>
-        </Wrapper>
+        </div>
+          <CarbSwaps
+          />
+          <DairySwaps
+          />
+          <SweetSwaps
+          />
+  
+      <div className="nutrition-container">
+        <div className="nutrition-header">
+          Ask your nutritional questions to Revita U HQ
+        </div>
+        <SearchForm
+          value={nutrition}
+          handleInputChange={handleInputChange}
+          placeholder="Search"
+        />
+        <FormBtn
+          onClick={handleFormSubmit}
+          className="nutrition-btn"
+          type="success"
+          basic color="black"
+        />
+        <Nutrition
+          answer={answer}
+          image={image}
+        />
+      </div>
+      </div>
       </Container>
     </div>
   );

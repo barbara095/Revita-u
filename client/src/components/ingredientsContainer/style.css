@@ -9,15 +9,31 @@
   padding-top: 20px;
 }
 
-.substitute-header {
-  margin: 0 auto;
+.nutrition-header {
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  width: 600px;
   font-size: 28px;
   padding: 30px;
+  line-height: 1em;
+  justify-content: center;
+  text-align: center;
   font-family: 'BioRhyme', serif;
 }
 
 .substitute {
   font-family: 'BioRhyme', serif;
+}
+
+.nutrition-container {
+  width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.nutrition-btn {
+  justify-content: center;
+  width: 550px;
+  margin: auto;
+  display: flex;
 }

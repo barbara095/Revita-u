@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from "../Grid";
 import { makeStyles } from '@material-ui/core/styles';
 import { Header } from "semantic-ui-react";
 import Grid from '@material-ui/core/Grid';
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   paper: {
-    width: 260,
+    width: 220,
     height: 240,
     overflow: 'auto',
   },
@@ -120,10 +121,10 @@ export default function DairySwaps() {
   );
 
   return (
-    <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
+    <Grid container spacing={1} justify="center" alignItems="center" className="dairy-container left justified">
       <Grid item className="dairy-left" >{customList(left)}</Grid>
       <Grid item >
-      <Header className="dairy-header">Dairy</Header>
+      <Header >Dairy</Header>
         <Grid container direction="column" alignItems="center">
           <Button
             variant="outlined"

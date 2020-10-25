@@ -12,15 +12,5 @@ router
   .put(RecipeController.update)
   .delete(RecipeController.remove);
 
-router
-  .route("/recipes")
-  .get(RecipeController.findAll)
-  .post(RecipeController.create);
-
-router
-  .route("/recipes/:id")
-  .get(RecipeController.findById)
-  .put(RecipeController.update)
-  .delete(RecipeController.remove);
 
 module.exports = router;

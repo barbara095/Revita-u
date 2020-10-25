@@ -4,6 +4,9 @@ import axios from "axios";
 const recipeURL = "https://edamam-recipe-search.p.rapidapi.com/search";
 const recipeAPI = "435f0cdaeamshd0fe4e59b8a1c27p16ae90jsn8bb53a2736cc";
 
+const nutritionURL = "https://rapidapi.p.rapidapi.com/recipes/quickAnswer";
+
+
 export default {
   searchRecipe: function (query) {
     return new Promise((resolve, reject) => {
@@ -36,6 +39,25 @@ export default {
             }
           });
           resolve(results);
+        })
+        .catch(err => reject(err))
+    }
+    )
+  },
+
+  searchNutrition: function(query) {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(nutritionURL, {
+          'headers': {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": recipeAPI,
+            "useQueryString": true,
+          },
+          "params": { "q": query }
+        })
+        .then(res => {
+          resolve(res);
         })
         .catch(err => reject(err))
     }

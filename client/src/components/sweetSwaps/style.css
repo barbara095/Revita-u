@@ -1,7 +1,12 @@
 .sweets-right {
-  background-color: rgb(95, 160, 140);
+  background-color: rgb(179, 218, 182);
 }
 
 .sweets-left {
-  background-color: rgb(212, 129, 134);
+  background-color: rgb(224, 169, 173);
+}
+
+.sweets-container.left.justified {
+  justify-content: center;
+  padding: 10px;
 }

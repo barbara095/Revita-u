@@ -1,6 +1,6 @@
-const User = require("../../models/user");
+const User = require("../models/user");
 const router = require('express').Router();
-const passport = require('../../config/passport');
+const passport = require('../config/passport');
 
 router.get('/user', (req, res, next) => {
   console.log(req.user)

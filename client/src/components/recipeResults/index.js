@@ -1,8 +1,5 @@
 import React from "react";
-import { Button } from 'semantic-ui-react';
-import Card from "../Card";
 import "./style.css";
-
 
 function RecipeResults(props) {
   return (

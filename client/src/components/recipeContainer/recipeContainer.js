@@ -40,24 +40,17 @@ function RecipeContainer(props) {
       .catch(err => console.log(err));
   };
 
-  const handleSaved = id => {
+  const handleSaved = e => {
+    e.preventDefault();
+    console.log(recipes)
 
-    let recipeSaved = recipes.filter(
-      (recipe) => recipe.id === id
+    let savedRecipes = recipes.filter(
+      (recipe) => recipe.id === e.target.id
     );
-    console.log(recipeSaved);
+    savedRecipes = savedRecipes[0];
 
-    API.saveRecipe({
-        recipeId: recipeSaved.id,
-        title: recipeSaved.title,
-        image: recipeSaved.image,
-        url: recipeSaved.url,
-        source: recipeSaved.source,
-        ingredients: recipeSaved.ingredientLines,
-        labels: recipeSaved.healthLabels,
-        calories: recipeSaved.calories,
-        
-      }).then(() => handleFormSubmit.bind(this));
+    API.saveRecipe(savedRecipes)
+      .then((response) => console.log(response));
       
   };
 
