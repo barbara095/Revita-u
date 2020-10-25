@@ -70,7 +70,7 @@ function RecipeContainer(props) {
               onClick={handleFormSubmit}
               type="success"
               basic color="teal"
-            >
+            >Search
             </FormBtn>
 
               <Col size="sm-6">

@@ -10,9 +10,7 @@ function FormBtn(props) {
         className={`button ${props["data-value"]}`} {...props}
         basic-color='teal'
         background='teal'
-    > Search
-      
-    </Button>
+    />
   )
 
 }

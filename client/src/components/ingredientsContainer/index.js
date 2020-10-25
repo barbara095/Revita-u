@@ -57,14 +57,15 @@ function IngredientsContainer() {
         <SearchForm
           value={nutrition}
           handleInputChange={handleInputChange}
-          placeholder="Search"
+          placeholder="Ask a question"
         />
         <FormBtn
           onClick={handleFormSubmit}
           className="nutrition-btn"
           type="success"
           basic color="black"
-        />
+        >Ask 
+        </FormBtn>
         <Nutrition
           answer={answer}
           image={image}
