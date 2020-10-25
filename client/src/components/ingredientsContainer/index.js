@@ -63,8 +63,8 @@ function IngredientsContainer() {
           onClick={handleFormSubmit}
           className="nutrition-btn"
           type="success"
-          basic color="black"
-        >Ask 
+          basic color="teal"
+        >Submit 
         </FormBtn>
         <Nutrition
           answer={answer}
