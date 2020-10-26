@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+
 function RecipeResults(props) {
   return (
     <div className="recipe-results">

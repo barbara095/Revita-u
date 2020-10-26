@@ -9,7 +9,7 @@ import FormBtn from "../Button";
 import API from "../../utils/API";
 import './style.css';
 
-function RecipeContainer(props) {
+function RecipeContainer() {
 
   const [recipes, setRecipes] = useState([]);
   const [searchRecipes, setSearch] = useState("");
@@ -31,7 +31,6 @@ function RecipeContainer(props) {
         if (recipes.length === 0) {
           throw new Error("No recipes found");
         }
-      
         setRecipes(recipes);
         setTitle(recipes.title);
         setUrl(recipes.url);
