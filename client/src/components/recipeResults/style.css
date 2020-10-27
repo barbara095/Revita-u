@@ -16,6 +16,7 @@
   padding-bottom: 10px;
   line-height: 0.5rem;
   font-family: 'Roboto Slab', serif;
+  text-align: left;
 }
 
 .recipe-source,
@@ -29,9 +30,43 @@
 }
 
 .recipe-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 
-.btn.btn-primary {
-  padding: 10px;
+.nutri-ingredients {
+  font-family: 'Roboto Slab', serif;
+}
+
+.saveRecipe.btn.btn-primary {
+  background-color: rgb(37, 37, 37);
+  border-color: rgb(37, 37, 37);
+  border-radius: 0;
+  align-content: center;
+  font-size: 11px;
+}
+
+.saveRecipe.btn.btn-primary:hover {
+  background-color: rgb(138, 135, 135);
+  border-color: rgb(138, 135, 135);
+}
+
+.viewSavedBtn.btn.btn-light {
+  background-color: rgb(252, 185, 196);
+  border-color: rgb(252, 185, 196);
+  color: rgb(46, 45, 45);
+  border-radius: 0;
+  align-content: center;
+  font-size: 11px;
+}
+
+.viewSavedBtn.btn.btn-light:hover {
+  background-color: rgb(211, 88, 107);
+  border-color: rgb(211, 88, 107);
+  color: #fff;
+}
+
+.save-buttons {
+  display: flex;
+  align-items: flex-end;
+  font-size: 8px;
 }

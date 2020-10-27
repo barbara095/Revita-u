@@ -43,13 +43,13 @@ class App extends Component {
 
           this.setState({
             loggedIn: true,
-            user: response.data.user
+            username: response.data.username
           })
         } else {
           console.log('No user');
           this.setState({
             loggedIn: false,
-            user: null
+            username: null
           })
         }
       })
@@ -97,9 +97,7 @@ class App extends Component {
               <Route exact path="/recipes" component={Recipe} />
               <Route exact path="/saved" component={Saved} />
               <Route exact path="/signup" component={Signup}/>
-              <Route exact path="/login"
-                render={() =>
-                  <LogIn updateUser={this.updateUser} />} />
+              <Route exact path="/login" component={LogIn}/>
             </Switch>
           </Wrapper>
           <Footer />

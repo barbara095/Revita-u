@@ -30,26 +30,23 @@ class Login extends Component {
     e.preventDefault()
     console.log("username is " + this.state.username)
     console.log("password is " + this.state.password)
-    
-		// this.props._login(this.state.username, this.state.password)
-		// this.setState({
-		// 	redirectTo: '/'
-		// })
+  
     axios
       .post('/auth/login', {
         username: this.state.username,
         password: this.state.password
-    })
+      })
       .then(response => {
         console.log('login response')
         console.log(response)
 
         if (response.status === 200) {
-          this.updateUser({
+          this.setState({
             loggedIn: true,
             user: response.data.user,
             redirectTo: '/'
           })
+          window.location.replace("/");
         }
       }).catch(error => {
         console.log("Error logging in: ")

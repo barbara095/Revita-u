@@ -27,7 +27,7 @@ router.post('/signup', (req, res) => {
       'username': username, 
       'password': password,
       'firstName': firstName,
-      'lastName': lastName
+      'lastName': lastName 
     })
     newUser.save((err, savedUser) => {
       if (err) return res.json(err)
@@ -45,9 +45,10 @@ router.post('/login', (req, res, next) => {
     (req, res) => {
         console.log('logged in', req.user);
         var userInfo = {
-            username: req.user.username
+          username: req.user.username,
         };
         res.send(userInfo);
+        
     }
 );
 
